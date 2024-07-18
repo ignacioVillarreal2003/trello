@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    ports:
+      - "5432:5432"  # Exponer el puerto 5432 para PostgreSQL
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: API  # Nombre de la base de datos que se creará al iniciar el contenedor
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistir datos entre reinicios del contenedor
+
+volumes:
+  postgres_data:
+    driver: local

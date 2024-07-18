@@ -1,0 +1,1555 @@
+{
+	"info": {
+		"_postman_id": "51a0889d-42c8-4ab7-88aa-9c4b49c6f561",
+		"name": "Trello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29330789"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "RegisterUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"username\": \"string\",\r\n  \"password\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/User/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"User",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/User/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"User",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5MDZ9.jF4OmJ-NUBGj7SQ27RTwwXaKTWY7SC3KOn6kgnWv8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/User/user@example.com",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"User",
+								"user@example.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5MDZ9.jF4OmJ-NUBGj7SQ27RTwwXaKTWY7SC3KOn6kgnWv8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/User",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5MDZ9.jF4OmJ-NUBGj7SQ27RTwwXaKTWY7SC3KOn6kgnWv8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/User/user@example.com",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"User",
+								"user@example.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"string\",\r\n  \"password\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/User/user@example.com",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"User",
+								"user@example.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "PostTeams",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"teamName\": \"string\",\r\n  \"ownerEmail\": \"user@example.com\",\r\n  \"teamPassword\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Team",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTeams",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Team",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTeam",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Team/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Team",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTeam",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Team/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Team",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTeam",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"teamName\": \"string\",\r\n  \"ownerEmail\": \"user@example.com\",\r\n  \"teamPassword\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Team/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Team",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserTeam",
+			"item": [
+				{
+					"name": "PostUserTeam",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userEmail\": \"user@example.com\",\r\n  \"teamId\": 0,\r\n  \"teamPassword\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/UserTeam",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"UserTeam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUserTeam",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userEmail\": \"user@example.com\",\r\n  \"teamId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/UserTeam",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"UserTeam"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Board",
+			"item": [
+				{
+					"name": "PostBoard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"boardTitle\": \"string\",\r\n  \"teamId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Board",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Board"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBoardById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Board/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Board",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBoardByTeamId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Board/team/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Board",
+								"team",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBoards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Board",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Board"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBoard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Board/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Board",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBoard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"boardTitle\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Board/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Board",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List",
+			"item": [
+				{
+					"name": "PostList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"listTitle\": \"string\",\r\n  \"boardId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/List",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"List"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetListById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/List/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"List",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetListsByBoardId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/List/board/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"List",
+								"board",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLists",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/List",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"List"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/List/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"List",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"listTitle\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/List/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"List",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "PostCard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardTitle\": \"string\",\r\n  \"listId\": 2,\r\n  \"start\": \"2024-07-18T16:49:52.215Z\",\r\n  \"end\": \"2024-07-18T16:49:52.215Z\",\r\n  \"description\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Card",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Card"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCardById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Card/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Card",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCardByListId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Card/list/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Card",
+								"list",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Card",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Card"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Card/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Card",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardTitle\": \"string1\",\r\n  \"end\": \"2024-07-18T16:53:46.577Z\",\r\n  \"description\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Card/6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Card",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "PostComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"commentDescription\": \"string\",\r\n  \"cardId\": 6,\r\n  \"commentDate\": \"2024-07-18T17:35:36.362Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Comment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCommentById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Comment/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Comment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCommentByCardId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Comment/card/6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Comment",
+								"card",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetComments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Comment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Comment/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Comment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"commentDescription\": \"string\",\r\n  \"commentDate\": \"2024-07-18T17:37:59.356Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Comment/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Comment",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Label",
+			"item": [
+				{
+					"name": "PostLabel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"labelTitle\": \"string\",\r\n  \"color\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/Label",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Label"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLabel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Label/string-stringst",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Label",
+								"string-stringst"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLabels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Label",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Label"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteLabel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44367/Label/string-stringst",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"Label",
+								"string-stringst"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CardLabel",
+			"item": [
+				{
+					"name": "PostCardLabel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardId\": 6,\r\n  \"labelTitle\": \"string\",\r\n  \"color\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/CardLabel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"CardLabel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCardLabel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardId\": 6,\r\n  \"labelTitle\": \"string\",\r\n  \"color\": \"stringst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/CardLabel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"CardLabel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CardUser",
+			"item": [
+				{
+					"name": "PostCardUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardId\": 6,\r\n  \"userEmail\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/CardUser",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"CardUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCardUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardId\": 6,\r\n  \"userEmail\": \"user@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44367/CardUser",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44367",
+							"path": [
+								"CardUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
