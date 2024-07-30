@@ -1,0 +1,132 @@
+.user-configurations {
+    background-color: white;
+    border-radius: 0 0 0 8px;
+    box-shadow: 0px 8px 12px #091e4226, 0px 0px 1px #091e424f;
+    width: 300px;
+    height: auto;
+    padding: 10px 0 0 0;
+  display: flex;
+}
+
+.content {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+  width: 100%;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #626f86;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.cont {
+    display: flex;
+    gap: 20px;
+}
+
+#perfil-icon-2 {
+    border-radius: 50%;
+    border: none;
+    background-color: #ff991f;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: 10px;
+    text-overflow: ellipsis;
+}
+
+.text p {
+    margin: 0;
+    color: #44546f;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.text p:first-of-type {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #172b4d;
+}
+
+.option, .option-delete {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.option:hover {
+    background-color: #091E420F;
+}
+
+.option-delete:hover {
+  background-color: #ff392a;
+  color: white;
+}
+
+.option-logout {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.option-logout:hover {
+    background-color: #ff392a;
+    color: white;
+}
+
+.change-password {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+
+.change-theme {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+
+.change-color-profile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}

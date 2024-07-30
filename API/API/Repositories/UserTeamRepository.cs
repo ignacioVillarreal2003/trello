@@ -14,16 +14,29 @@ public class UserTeamRepository : IUserTeamRepository
         _context = context;
     }
     
+    public async Task<List<Team>> GetUserTeamsAsync(string userEmail)
+    {
+        var teams = await _context.UserTeams
+            .Where(ut => ut.UserEmail == userEmail)
+            .Join(_context.Teams,
+                userTeam => userTeam.TeamName,
+                team => team.TeamName,
+                (userTeam, team) => team)
+            .ToListAsync();
+
+        return teams;
+    }
+    
     public async Task<bool> AddUserTeamAsync(UserTeam userTeam)
     {
         _context.UserTeams.Add(userTeam);
         return await _context.SaveChangesAsync() > 0;
     }
     
-    public async Task<bool> DeleteUserTeamAsync(long teamId, string userEmail)
+    public async Task<bool> DeleteUserTeamAsync(string teamName, string userEmail)
     {
         var userTeam = await _context.UserTeams
-            .FirstOrDefaultAsync(ut => ut.TeamId == teamId && ut.UserEmail == userEmail);
+            .FirstOrDefaultAsync(ut => ut.TeamName == teamName && ut.UserEmail == userEmail);
         if (userTeam == null)
         {
             return false;

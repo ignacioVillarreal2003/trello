@@ -30,15 +30,22 @@ public class UserController : ControllerBase
             return NotFound();
         }
 
-        return user;
-    }
+        return Ok(new { user });
+    } // FUNCIONA
 
     [HttpGet]
     [Authorize]
     public async Task<ActionResult<List<User>>> GetUsers()
     {
-        return await _userService.GetUsersAsync();
-    }
+        var users = _userService.GetUsersAsync();
+        
+        if (users == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(new { users });
+    } // FUNCIONA
 
     [HttpDelete("{email}")]
     [Authorize]
@@ -51,7 +58,7 @@ public class UserController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 
     [HttpPut("{email}")]
     [Authorize] 
@@ -64,7 +71,7 @@ public class UserController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
     
     [HttpPost("register")]
     public async Task<ActionResult<string>> RegisterUser(UserDto user)
@@ -76,8 +83,8 @@ public class UserController : ControllerBase
         }
 
         var token = _jwt.GenerarToken(user.Email);
-        return token;
-    }
+        return Ok(new { token });
+    } // FUNCIONA
     
     [HttpPost("login")]
     public async Task<ActionResult<string>> LoginUser(LoginUserDto user)
@@ -89,6 +96,6 @@ public class UserController : ControllerBase
         }
 
         var token = _jwt.GenerarToken(user.Email);
-        return token;
-    }
+        return Ok(new { token });
+    } // FUNCIONA
 }

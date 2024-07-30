@@ -13,9 +13,11 @@ public class Board
     [StringLength(50)]
     public string BoardTitle { get; set; }
 
-    public long TeamId { get; set; }
+    [Required]
+    public string Theme { get; set; }
+    public string TeamName { get; set; }
 
-    [ForeignKey(nameof(TeamId))]
+    [ForeignKey(nameof(TeamName))]
     public Team Team { get; set; }
 
     public ICollection<List> Lists { get; set; }

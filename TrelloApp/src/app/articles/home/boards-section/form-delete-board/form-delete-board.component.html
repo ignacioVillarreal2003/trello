@@ -1,0 +1,10 @@
+<div class="form-delete-board">
+  <form class="content" [formGroup]="formBoard">
+    <label for="boardType1">Select a board</label>
+    <select id="boardType1" formControlName="id">
+      <option *ngFor="let board of boards" [value]="board.id">{{ board.boardTitle }}</option>
+    </select>
+    <app-generic-button (click)="DeleteBoard()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
+    <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+  </form>
+</div>

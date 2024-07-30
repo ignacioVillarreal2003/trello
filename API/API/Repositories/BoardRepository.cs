@@ -19,9 +19,9 @@ public class BoardRepository : IBoardRepository
         return await _context.Boards.FindAsync(id);
     }
     
-    public async Task<List<Board>> GetBoardsByTeamIdAsync(long teamId)
+    public async Task<List<Board>> GetBoardsByTeamIdAsync(string teamName)
     {
-        return await _context.Boards.Where(b => b.TeamId == teamId).ToListAsync(); 
+        return await _context.Boards.Where(b => b.TeamName == teamName).ToListAsync(); 
     }
 
     public async Task<List<Board>> GetBoardsAsync()

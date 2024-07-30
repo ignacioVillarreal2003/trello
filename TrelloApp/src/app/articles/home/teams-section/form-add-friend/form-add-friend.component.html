@@ -1,0 +1,14 @@
+<div class="form-add-friend">
+  <form class="content" [formGroup]="formTeam">
+    <label for="teamType3">Select a team</label>
+    <select id="teamType3" formControlName="teamName">
+      <option *ngFor="let team of teams" [value]="team.teamName">{{ team.teamName }}</option>
+    </select>
+    <label for="userType1">Select a user</label>
+    <select id="userType1" formControlName="userEmail">
+      <option *ngFor="let user of users" [value]="user.email">{{ user.email }}</option>
+    </select>
+    <app-generic-button (click)="AddFriend()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
+    <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+  </form>
+</div>

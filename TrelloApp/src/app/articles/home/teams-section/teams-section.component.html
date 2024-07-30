@@ -1,0 +1,17 @@
+<div class="teams-section">
+  <div class="options">
+    <app-generic-button type="primary" size="large" text="Create a team" (click)="OpenPostTeamForm()"></app-generic-button>
+    <div class="opt">
+      <button class="update" (click)="OpenUpdateTeamForm()"></button>
+      <button class="delete" (click)="OpenDeleteTeamForm()"></button>
+      <button class="add-friend" (click)="OpenAddFriendForm()"><img src="./assets/anadir-amigo.png"></button>
+    </div>
+  </div>
+  <ul>
+    <li *ngFor="let team of teams"><app-basic-pre-view-card (click)="OpenBoards(team.teamName)" size="medium" color="{{team.theme}}" text="{{team.teamName}}"></app-basic-pre-view-card></li>
+  </ul>
+</div>
+<app-form-post-team class="form" id="form-post-team"></app-form-post-team>
+<app-form-update-team class="form" id="form-update-team"></app-form-update-team>
+<app-form-delete-team class="form" id="form-delete-team"></app-form-delete-team>
+<app-form-add-friend class="form" id="form-add-friend"></app-form-add-friend>

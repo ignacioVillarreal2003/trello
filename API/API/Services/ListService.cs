@@ -12,20 +12,10 @@ public class ListService
     {
         _listRepository = listRepository;
     }
-
-    public async Task<List> GetListByIdAsync(long id)
-    {
-        return await _listRepository.GetListByIdAsync(id);
-    }
     
-    public async Task<List<List>> GetListByBoardIdAsync(long id)
+    public async Task<List<List>> GetListsAsync(long boardId)
     {
-        return await _listRepository.GetListByBoardIdAsync(id);
-    }
-
-    public async Task<List<List>> GetListsAsync()
-    {
-        return await _listRepository.GetListsAsync();
+        return await _listRepository.GetListByBoardIdAsync(boardId);
     }
 
     public async Task<bool> AddListAsync(ListDto list)

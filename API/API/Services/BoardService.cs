@@ -12,27 +12,18 @@ public class BoardService
     {
         _boardRepository = boardRepository;
     }
-
-    public async Task<Board> GetBoardByIdAsync(long id)
-    {
-        return await _boardRepository.GetBoardByIdAsync(id);
-    }
     
-    public async Task<List<Board>> GetBoardsByTeamIdAsync(long id)
+    public async Task<List<Board>> GetBoardsAsync(string teamName) 
     {
-        return await _boardRepository.GetBoardsByTeamIdAsync(id);
-    }
+        return await _boardRepository.GetBoardsByTeamIdAsync(teamName);
+    } // FUNCIONA
     
-    public async Task<List<Board>> GetBoardsAsync()
-    {
-        return await _boardRepository.GetBoardsAsync();
-    }
-
     public async Task<bool> AddBoardAsync(BoardDto board)
     {
         Board b = new Board();
         b.BoardTitle = board.BoardTitle;
-        b.TeamId = board.TeamId;
+        b.TeamName = board.TeamName;
+        b.Theme = board.Theme;
         
         return await _boardRepository.AddBoardAsync(b);
     }
@@ -50,7 +41,16 @@ public class BoardService
             return false;
         }
 
-        b.BoardTitle = board.BoardTitle;
+        if (board.BoardTitle.Length > 0)
+        {
+            b.BoardTitle = board.BoardTitle;
+        }
+        
+        if (board.Theme.Length > 0)
+        {
+            b.Theme = board.Theme;
+        }
+        
         return await _boardRepository.UpdateBoardAsync(b);
     }
 }

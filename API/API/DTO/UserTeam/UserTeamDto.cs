@@ -9,9 +9,5 @@ public class UserTeamDto
     public string UserEmail { get; set; }
     
     [Required]
-    public long TeamId { get; set; }
-    
-    [Required]
-    [StringLength(200, MinimumLength = 8)]
-    public string TeamPassword { get; set; }
+    public string TeamName { get; set; }
 }

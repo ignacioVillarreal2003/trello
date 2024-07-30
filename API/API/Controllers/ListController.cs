@@ -16,39 +16,19 @@ public class ListController : ControllerBase
     {
         _listService = listService;
     }
-
-    [HttpGet("{id}")]
-    [Authorize]
-    public async Task<ActionResult<List>> GetListById(long id)
-    {
-        var list = await _listService.GetListByIdAsync(id);
-        if (list == null)
-        {
-            return NotFound();
-        }
-
-        return list;
-    }
     
-    [HttpGet("board/{id}")]
+    [HttpGet("{boardId}")]
     [Authorize]
-    public async Task<ActionResult<List<List>>> GetListByBoardId(long id)
+    public async Task<ActionResult<List<List>>> GetLists(long boardId)
     {
-        var list = await _listService.GetListByBoardIdAsync(id);
-        if (list == null)
+        var lists = await _listService.GetListsAsync(boardId);
+        if (lists == null)
         {
             return NotFound();
         }
 
-        return list;
-    }
-
-    [HttpGet]
-    [Authorize]
-    public async Task<ActionResult<List<List>>> GetLists()
-    {
-        return await _listService.GetListsAsync();
-    }
+        return Ok(new { lists });
+    } // FUNCIONA
 
     [HttpPost]
     [Authorize]
@@ -61,7 +41,7 @@ public class ListController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 
     [HttpDelete("{id}")]
     [Authorize]

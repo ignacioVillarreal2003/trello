@@ -1,0 +1,60 @@
+button.small {
+  width: 150px;
+  height: 75px;
+}
+
+button.medium {
+  width: 200px;
+  height: 100px;
+}
+
+button.large {
+  width: 250px;
+  height: 125px;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+button.skyblue {
+  background-color: rgb(34, 140, 213);
+  background-image: url(https://trello.com/assets/707f35bc691220846678.svg);
+}
+
+button.blue {
+  background-color: rgb(11, 80, 175);
+  background-image: url(https://trello.com/assets/d106776cb297f000b1f4.svg);
+}
+
+button.orange {
+  background-color: rgb(239, 118, 58);
+  background-image: url(https://trello.com/assets/aec98becb6d15a5fc95e.svg);
+}
+
+button.green {
+  background-color: rgb(63, 164, 149);
+  background-image: url(https://trello.com/assets/92e67a71aaaa98dea5ad.svg);
+}
+
+button.pink {
+  background-color: rgb(244, 136, 166);
+  background-image: url(https://trello.com/assets/b75536d1afb40980ca57.svg);
+}
+
+button.grey {
+  background-color: rgb(55, 72, 102);
+  background-image: url(https://trello.com/assets/941e9fef7b1b1129b904.svg);
+}
+
+button.violet {
+  background-color: rgb(168, 105, 193);
+  background-image: url(	https://trello.com/assets/a7c521b94eb153008f2d.svg);
+}

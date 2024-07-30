@@ -9,10 +9,5 @@ public class TeamDto
     public string TeamName { get; set; }
     
     [Required]
-    [EmailAddress]
-    public string OwnerEmail { get; set; }
-    
-    [Required]
-    [StringLength(200, MinimumLength = 8)]
-    public string TeamPassword { get; set; }
+    public string Theme { get; set; }
 }

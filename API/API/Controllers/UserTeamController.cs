@@ -1,4 +1,5 @@
 using API.DTO.Team;
+using API.Models;
 using API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -17,6 +18,15 @@ public class UserTeamController : ControllerBase
         _userTeamService = userTeamService;
     }
     
+    [HttpGet("{userEmail}")]
+    [Authorize]
+    public async Task<ActionResult<List<Team>>> GetUserTeams(string userEmail)
+    {
+        var teams = await _userTeamService.GetUserTeamsAsync(userEmail);
+        
+        return Ok(new { teams });
+    } // FUNCIONA
+    
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<bool>> AddUserTeam(UserTeamDto userTeam)
@@ -28,11 +38,11 @@ public class UserTeamController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
     
     [HttpDelete]
     [Authorize]
-    public async Task<ActionResult<bool>> DeleteUserTeam(DeleteUserTeamDto userTeam)
+    public async Task<ActionResult<bool>> DeleteUserTeam(UserTeamDto userTeam)
     {
         var result = await _userTeamService.DeleteUserTeamAsync(userTeam);
         if (!result)
@@ -41,5 +51,5 @@ public class UserTeamController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // VER UTILIDAD ---------
 }

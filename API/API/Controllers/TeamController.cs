@@ -17,29 +17,9 @@ public class TeamController : ControllerBase
         _teamService = teamService;
     }
 
-    [HttpGet("{id}")]
-    [Authorize]
-    public async Task<ActionResult<Team>> GetTeam(long id)
-    {
-        var team = await _teamService.GetTeamByIdAsync(id);
-        if (team == null)
-        {
-            return NotFound();
-        }
-
-        return team;
-    }
-
-    [HttpGet]
-    [Authorize]
-    public async Task<ActionResult<List<Team>>> GetTeams()
-    {
-        return await _teamService.GetTeamsAsync();
-    }
-
     [HttpPost]
     [Authorize]
-    public async Task<ActionResult<bool>> AddTeam(TeamDto team)
+    public async Task<ActionResult<bool>> AddTeam(TeamDto team) // FUNCIONA
     {
         var result = await _teamService.AddTeamAsync(team);
         if (!result)
@@ -50,29 +30,29 @@ public class TeamController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{teamName}")]
     [Authorize]
-    public async Task<IActionResult> DeleteTeam(long id)
+    public async Task<IActionResult> DeleteTeam(string teamName)
     {
-        var result = await _teamService.DeleteTeamAsync(id);
+        var result = await _teamService.DeleteTeamAsync(teamName);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    }
+    } //FUNCIONA
 
-    [HttpPut("{id}")]
+    [HttpPut("{teamName}")]
     [Authorize]
-    public async Task<IActionResult> UpdateTeam(long id, TeamDto team)
+    public async Task<IActionResult> UpdateTeam(string teamName, UpdateTeamDto team)
     {
-        var result = await _teamService.UpdateTeamAsync(id, team);
+        var result = await _teamService.UpdateTeamAsync(teamName, team);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 }

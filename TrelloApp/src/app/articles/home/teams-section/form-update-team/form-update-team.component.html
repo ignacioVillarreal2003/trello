@@ -1,0 +1,20 @@
+<div class="form-update-team">
+  <form class="content" [formGroup]="formTeam">
+    <label for="teamType2">Select a team</label>
+    <select id="teamType2" formControlName="teamName">
+      <option *ngFor="let team of teams" [value]="team.teamName">{{ team.teamName }}</option>
+    </select>
+    <label for="teamTheme">Select a theme</label>
+    <select id="teamTheme" formControlName="teamTheme">
+      <option value='skyblue'>skyblue</option>
+      <option value='blue'>blue</option>
+      <option value='orange'>orange</option>
+      <option value='green'>green</option>
+      <option value='pink'>pink</option>
+      <option value='grey'>grey</option>
+      <option value='violet'>violet</option>
+    </select>
+    <app-generic-button (click)="UpdateTeam()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
+    <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+  </form>
+</div>

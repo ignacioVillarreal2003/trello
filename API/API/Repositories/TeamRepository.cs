@@ -14,14 +14,9 @@ public class TeamRepository : ITeamRepository
         _context = context;
     }
 
-    public async Task<Team> GetTeamByIdAsync(long id)
+    public async Task<Team> GetTeamAsync(string teamName)
     {
-        return await _context.Teams.FindAsync(id);
-    }
-
-    public async Task<List<Team>> GetTeamsAsync()
-    {
-        return await _context.Teams.ToListAsync();
+        return await _context.Teams.FindAsync(teamName);
     }
 
     public async Task<bool> AddTeamAsync(Team team)
@@ -30,9 +25,9 @@ public class TeamRepository : ITeamRepository
         return await _context.SaveChangesAsync() > 0;
     }
 
-    public async Task<bool> DeleteTeamAsync(long id)
+    public async Task<bool> DeleteTeamAsync(string teamName)
     {
-        var team = await _context.Teams.FindAsync(id);
+        var team = await _context.Teams.FindAsync(teamName);
         if (team == null)
         {
             return false;

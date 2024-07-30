@@ -13,44 +13,29 @@ public class TeamService
         _teamRepository = teamRepository;
     }
 
-    public async Task<Team> GetTeamByIdAsync(long id)
-    {
-        return await _teamRepository.GetTeamByIdAsync(id);
-    }
-
-    public async Task<List<Team>> GetTeamsAsync()
-    {
-        return await _teamRepository.GetTeamsAsync();
-    }
-
     public async Task<bool> AddTeamAsync(TeamDto team)
     {
-        string passwordHash = BCrypt.Net.BCrypt.HashPassword(team.TeamPassword);
-        
         Team t = new Team();
         t.TeamName = team.TeamName;
-        t.OwnerEmail = team.OwnerEmail;
-        t.TeamPassword = passwordHash;
+        t.Theme = team.Theme;
         
         return await _teamRepository.AddTeamAsync(t);
     }
 
-    public async Task<bool> DeleteTeamAsync(long id)
+    public async Task<bool> DeleteTeamAsync(string teamName)
     {
-        return await _teamRepository.DeleteTeamAsync(id);
+        return await _teamRepository.DeleteTeamAsync(teamName);
     }
 
-    public async Task<bool> UpdateTeamAsync(long id, TeamDto team)
+    public async Task<bool> UpdateTeamAsync(string teamName, UpdateTeamDto team)
     {
-        Team t = await _teamRepository.GetTeamByIdAsync(id);
+        Team t = await _teamRepository.GetTeamAsync(teamName);
         if (t == null)
         {
             return false;
         }
-
-        t.TeamName = team.TeamName;
-        t.OwnerEmail = team.OwnerEmail;
-        t.TeamPassword = team.TeamPassword;
+        
+        t.Theme = team.Theme;
 
         return await _teamRepository.UpdateTeamAsync(t);
     }

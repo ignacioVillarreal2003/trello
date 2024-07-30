@@ -1,0 +1,14 @@
+<div class="card-content">
+  <div class="content" *ngIf="card">
+    <button class="close" (click)="CloseWindow()"></button>
+    <h2>{{card.cardTitle}}</h2>
+    <div class="description">
+      <h3>Description</h3>
+      <p>{{card.description}}</p>
+    </div>
+    <div class="date">
+      <p>Start {{card.start.slice(0,10)}}</p>
+      <p>End {{card.end.slice(0,10)}}</p>
+    </div>
+  </div>
+</div>

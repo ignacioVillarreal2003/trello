@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="home">
+    <div class="content">
+        <ul class="options">
+            <li><button data-selected="true" (click)="SelectOption($event)" (click)="ChangeMode(1)"><img src="/assets/icon-home.png" alt=""><p>Home</p></button></li>
+            <li><button data-selected="false" (click)="SelectOption($event)" (click)="ChangeMode(2)"><img src="/assets/icon-team.png" alt=""><p>Teams</p></button></li>
+        </ul>
+      <app-presentation class="cont" id="presentation"></app-presentation>
+      <app-teams-section class="cont" id="teams-section"></app-teams-section>
+      <app-boards-section class="cont" id="boards-section"></app-boards-section>
+    </div>
+</div>

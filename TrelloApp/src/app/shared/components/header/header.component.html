@@ -1,0 +1,9 @@
+<header>
+    <a routerLink="/home">
+        <img src="/assets/icon-trello.png">
+        <h2>Trello</h2>
+    </a>
+    <button id="perfil-icon-1" (click)="OpenConfigurations()">{{username.charAt(0)}}</button>
+    <app-user-configurations [username]="username" [email]="email" data-view="false"
+        class="configurations" id="user-configurations"></app-user-configurations>
+</header>

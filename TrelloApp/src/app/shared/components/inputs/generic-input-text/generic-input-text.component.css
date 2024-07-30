@@ -1,0 +1,34 @@
+input {
+  border: 2px solid #dcdfe4;
+  border-radius: 3px;
+  padding: 0 10px;
+  outline: none;
+}
+
+input:hover  {
+  background-color: #eef1f5;
+}
+
+input:focus-within {
+  border: 2px solid #388bff;
+}
+
+input.small {
+  width: 200px;
+  height: 30px;
+}
+
+input.medium {
+  width: 300px;
+  height: 40px;
+}
+
+input.large {
+  width: 400px;
+  height: 50px;
+}
+
+input.free {
+  width: 100%;
+  height: 100%;
+}

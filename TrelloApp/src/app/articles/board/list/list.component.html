@@ -1,0 +1,11 @@
+<div class="list">
+  <div class="title">
+    <h3>{{list.listTitle}}</h3>
+    <button class="options"><div class="dot"></div><div class="dot"></div><div class="dot"></div></button>
+  </div>
+  <button class="add-card" (click)="OpenPostCard(list.id)">Add card</button>
+  <ul class="cards">
+    <li *ngFor="let card of cards"><app-card [card]="card"></app-card></li>
+  </ul>
+  <app-post-card class="post-card"></app-post-card>
+</div>

@@ -1,0 +1,32 @@
+<div class="user-access">
+  <div class="content login">
+    <div class="header">
+      <img src="/assets/icon-trello.png" height="48" width="48" alt="">
+      <h2>Trello</h2>
+    </div>
+    <p>Log in to continue</p>
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmitLogin()">
+      <app-generic-input-text formControlName="email" type="text" size="medium" placeholder="Enter your email"></app-generic-input-text>
+      <app-generic-input-text formControlName="password" type="password" size="medium" placeholder="Enter your password"></app-generic-input-text>
+      <app-generic-button buttonType="submit" type="primary" size="medium" text="Continue"></app-generic-button>
+    </form>
+    <div class="separator"></div>
+    <a (click)="ChangeMode()">Create an account</a>
+  </div>
+
+  <div class="content register">
+    <div class="header">
+      <img src="/assets/icon-trello.png" height="48" width="48" alt="">
+      <h2>Trello</h2>
+    </div>
+    <p>Sign up to continue</p>
+    <form [formGroup]="formRegister" (ngSubmit)="onSubmitRegister()">
+      <app-generic-input-text formControlName="email" type="text" size="medium" placeholder="Enter your email"></app-generic-input-text>
+      <app-generic-input-text formControlName="password" type="password" size="medium" placeholder="Enter your password"></app-generic-input-text>
+      <app-generic-input-text formControlName="username" type="text" size="medium" placeholder="Enter your username"></app-generic-input-text>
+      <app-generic-button buttonType="submit" type="primary" size="medium" text="Sign up"></app-generic-button>
+    </form>
+    <div class="separator"></div>
+    <a (click)="ChangeMode()">Log in</a>
+  </div>
+</div>

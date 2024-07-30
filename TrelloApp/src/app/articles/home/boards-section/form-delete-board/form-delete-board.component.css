@@ -1,0 +1,26 @@
+.form-delete-board {
+  width: 100%;
+  height: 100vh;
+  background: rgb(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: fixed;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  width: 370px;
+  gap: 10px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 0;
+}
+
+select {
+  width: 80%;
+}

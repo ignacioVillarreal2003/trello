@@ -15,29 +15,28 @@ public class UserTeamService
         _teamRepository = teamRepository;
     }
     
+    public async Task<List<Team>> GetUserTeamsAsync(string userEmail)
+    {
+        return await _userTeamRepository.GetUserTeamsAsync(userEmail);
+    }
+    
     public async Task<bool> AddUserTeamAsync(UserTeamDto userTeam)
     {
-        Team t = await _teamRepository.GetTeamByIdAsync(userTeam.TeamId);
+        Team t = await _teamRepository.GetTeamAsync(userTeam.TeamName);
         if (t == null)
-        {
-            return false;
-        }
-
-        bool verified = BCrypt.Net.BCrypt.Verify(userTeam.TeamPassword, t.TeamPassword);
-        if (!verified)
         {
             return false;
         }
         
         UserTeam uT = new UserTeam();
-        uT.TeamId = userTeam.TeamId;
+        uT.TeamName = userTeam.TeamName;
         uT.UserEmail = userTeam.UserEmail;
         
         return await _userTeamRepository.AddUserTeamAsync(uT);
     }
     
-    public async Task<bool> DeleteUserTeamAsync(DeleteUserTeamDto userTeam)
+    public async Task<bool> DeleteUserTeamAsync(UserTeamDto userTeam)
     {
-        return await _userTeamRepository.DeleteUserTeamAsync(userTeam.TeamId, userTeam.UserEmail);
+        return await _userTeamRepository.DeleteUserTeamAsync(userTeam.TeamName, userTeam.UserEmail);
     }
 }

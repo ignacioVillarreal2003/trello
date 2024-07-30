@@ -16,39 +16,20 @@ public class BoardController : ControllerBase
     {
         _boardService = boardService;
     }
-
-    [HttpGet("{id}")]
-    [Authorize]
-    public async Task<ActionResult<Board>> GetBoardById(long id)
-    {
-        var board = await _boardService.GetBoardByIdAsync(id);
-        if (board == null)
-        {
-            return NotFound();
-        }
-
-        return board;
-    }
     
-    [HttpGet("team/{id}")]
+    [HttpGet("{teamName}")]
     [Authorize]
-    public async Task<ActionResult<List<Board>>> GetBoardsByTeamId(long id)
+    public async Task<ActionResult<List<Board>>> GetBoards(string teamName)
     {
-        var board = await _boardService.GetBoardsByTeamIdAsync(id);
-        if (board == null)
+        var boards = await _boardService.GetBoardsAsync(teamName);
+        if (boards == null)
         {
             return NotFound();
         }
 
-        return board;
-    }
+        return Ok(new { boards });
 
-    [HttpGet]
-    [Authorize]
-    public async Task<ActionResult<List<Board>>> GetBoards()
-    {
-        return await _boardService.GetBoardsAsync();
-    }
+    } // FUNCIONA
 
     [HttpPost]
     [Authorize]
@@ -61,7 +42,7 @@ public class BoardController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 
     [HttpDelete("{id}")]
     [Authorize]
@@ -74,7 +55,7 @@ public class BoardController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 
     [HttpPut("{id}")]
     [Authorize]
@@ -87,5 +68,5 @@ public class BoardController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 }

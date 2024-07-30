@@ -16,39 +16,19 @@ public class CardController : ControllerBase
     {
         _cardService = cardService;
     }
-
+    
     [HttpGet("{id}")]
     [Authorize]
-    public async Task<ActionResult<Card>> GetCardById(long id)
+    public async Task<ActionResult<List<Card>>> GetCards(long id)
     {
-        var card = await _cardService.GetCardByIdAsync(id);
-        if (card == null)
+        var cards = await _cardService.GetCardsAsync(id);
+        if (cards == null)
         {
             return NotFound();
         }
 
-        return card;
-    }
-    
-    [HttpGet("list/{id}")]
-    [Authorize]
-    public async Task<ActionResult<List<Card>>> GetCardByListId(long id)
-    {
-        var card = await _cardService.GetCardByListIdAsync(id);
-        if (card == null)
-        {
-            return NotFound();
-        }
-
-        return card;
-    }
-
-    [HttpGet]
-    [Authorize]
-    public async Task<ActionResult<List<Card>>> GetCards()
-    {
-        return await _cardService.GetCardsAsync();
-    }
+        return Ok(new { cards });
+    } // FUNCIONA
 
     [HttpPost]
     [Authorize]
@@ -61,7 +41,7 @@ public class CardController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 
     [HttpDelete("{id}")]
     [Authorize]

@@ -12,20 +12,10 @@ public class CardService
     {
         _cardRepository = cardRepository;
     }
-
-    public async Task<Card> GetCardByIdAsync(long id)
-    {
-        return await _cardRepository.GetCardByIdAsync(id);
-    }
     
-    public async Task<List<Card>> GetCardByListIdAsync(long id)
+    public async Task<List<Card>> GetCardsAsync(long id)
     {
         return await _cardRepository.GetCardByListIdAsync(id);
-    }
-
-    public async Task<List<Card>> GetCardsAsync()
-    {
-        return await _cardRepository.GetCardsAsync();
     }
 
     public async Task<bool> AddCardAsync(CardDto card)

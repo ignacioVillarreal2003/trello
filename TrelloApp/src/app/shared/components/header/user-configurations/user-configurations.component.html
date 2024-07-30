@@ -1,0 +1,20 @@
+<div class="user-configurations">
+    <div class="content">
+        <div class="information">
+            <h3>Account</h3>
+            <div class="cont">
+                <div id="perfil-icon-2"><p>{{username.charAt(0)}}</p></div>
+                <div class="text">
+                    <p>{{username}}</p>
+                    <p>{{email}}</p>
+                </div>
+            </div>
+        </div>
+        <button class="option" (click)="OpenChangePassword()">Change password</button>
+        <button class="option" (click)="OpenChangeTheme()">Change theme</button>
+        <button class="option-delete" (click)="DeleteUser()">Delete user</button>
+        <button class="option-logout" (click)="Logout()" routerLink="/">Log out</button>
+    </div>
+    <app-change-password class="change-password" id="change-password"></app-change-password>
+    <app-change-theme class="change-theme" id="change-theme"></app-change-theme>
+</div>

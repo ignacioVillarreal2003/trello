@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ufdyaunITSvrt2XwlaRUJnB1px0NcmQ3TVwRZ3sziXKzARsuaK87fgE3i02xkKU3jS+DktkJ7nJktEwEXqSgXg==",
+  "dgSpecHash": "XGo+eWCVh5/BsVBIuDhijGEIELFVX6VeF0sA2+asID2zkJfQDEdbRdXXH84QAEaVLeFwxFqy1Fc+S0/z7as5Iw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ignac\\OneDrive\\Escritorio\\API\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\ignac\\OneDrive\\Escritorio\\trello\\API\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ignac\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ignac\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

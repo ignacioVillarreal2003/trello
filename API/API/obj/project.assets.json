@@ -4125,11 +4125,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ignac\\OneDrive\\Escritorio\\API\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\ignac\\OneDrive\\Escritorio\\trello\\API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\ignac\\OneDrive\\Escritorio\\API\\API\\API.csproj",
+      "projectPath": "C:\\Users\\ignac\\OneDrive\\Escritorio\\trello\\API\\API\\API.csproj",
       "packagesPath": "C:\\Users\\ignac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ignac\\OneDrive\\Escritorio\\API\\API\\obj\\",
+      "outputPath": "C:\\Users\\ignac\\OneDrive\\Escritorio\\trello\\API\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ignac\\AppData\\Roaming\\NuGet\\NuGet.Config",

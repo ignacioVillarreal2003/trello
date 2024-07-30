@@ -43,7 +43,7 @@ public class AppDbContext: DbContext
             .HasKey(cu => new { cu.CardId, cu.UserEmail });
 
         modelBuilder.Entity<UserTeam>()
-            .HasKey(ut => new { ut.UserEmail, ut.TeamId });
+            .HasKey(ut => new { ut.UserEmail, ut.TeamName });
         
         base.OnModelCreating(modelBuilder);
     }

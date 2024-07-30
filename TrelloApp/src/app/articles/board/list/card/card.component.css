@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border: 2px solid transparent;
+}
+
+button:hover {
+  border: 2px solid #1D7AFC;
+}
+
+.card-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}
