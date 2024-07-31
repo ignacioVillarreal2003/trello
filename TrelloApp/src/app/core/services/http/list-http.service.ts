@@ -40,8 +40,8 @@ export class ListHttpService {
     );
   }
 
-  UpdateList(id: number, boardTitle: string): Observable<any> {
-    const requestBody: any = { boardTitle: boardTitle }
+  UpdateList(id: number, listTitle: string): Observable<any> {
+    const requestBody: any = { listTitle: listTitle }
     return this.http.put<any>(this.baseUrl + `/${id}`, requestBody, this.httpOptions).pipe(
       catchError(this.handleError)
     );

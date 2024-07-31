@@ -14,17 +14,17 @@ export class ListCommunicationService {
     this.refreshListsSubject.next();
   }
 
-  private listSource: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  currentList: Observable<any> = this.listSource.asObservable();
+  private listsSource: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  currentLists: Observable<any> = this.listsSource.asObservable();
 
-  changeList(lists: IList[]) {
-    this.listSource.next(lists);
+  changeLists(lists: IList[]) {
+    this.listsSource.next(lists);
   }
 
-  private listIdSource: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  currentListId: Observable<number> = this.listIdSource.asObservable();
+  private listSource: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  currentList: Observable<IList> = this.listSource.asObservable();
 
-  changeListId(id: number) {
-    this.listIdSource.next(id);
+  changeList(list: IList) {
+    this.listSource.next(list);
   }
 }

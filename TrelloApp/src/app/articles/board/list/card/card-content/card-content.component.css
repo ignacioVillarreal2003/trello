@@ -15,35 +15,71 @@
   justify-content: start;
   flex-direction: column;
   width: 560px;
+  min-height: 400px;
   gap: 10px;
   background-color: white;
-  border-radius: 10px;
-  padding: 20px 30px;
+  padding: 10px;
   position: relative;
 }
 
-h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
-  width: 100%;
+form {
+  width: calc(100% - 50px);
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+  width: 90%;
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+
+.card-title:focus, .card-title:focus-visible {
+  color: black;
+  background-color: #ffffff !important;
+  border: 2px solid #388bff !important;
+  outline: 0 !important;
+}
+
+.card-title:hover {
+  background-color: hsla(0, 0%, 0%, 0.16);
 }
 
 .description {
   display: flex;
   width: 100%;
   flex-direction: column;
+  height: 240px;
 }
 
-h3 {
+.description h3 {
   width: 100%;
   margin: 0;
-  padding: 0;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 5px;
 }
 
-.description p {
+.description textarea {
   width: 100%;
-  padding: 15px;
-  background-color: #e4e6ea;
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  border-top: none;
+  padding: 8px;
+}
+
+.description textarea:focus, .description textarea:focus-visible {
+  color: black;
+  background-color: #ffffff !important;
+  border: 2px solid #388bff !important;
+  outline: 0 !important;
+}
+
+.description textarea:hover {
+  background-color: hsla(0, 0%, 0%, 0.16);
 }
 
 .date {
@@ -60,11 +96,32 @@ h3 {
 
 .close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 25px;
-  height: 25px;
-  background-color: #ff392a;
-  border-radius: 50%;
+  top: 6px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close p {
+  font-size: 24px;
+}
+
+.close:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.delete-card {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  border: none;
+}
+
+.delete-card:hover {
+  background: red;
 }

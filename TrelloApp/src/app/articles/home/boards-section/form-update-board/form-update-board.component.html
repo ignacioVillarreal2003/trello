@@ -1,21 +1,32 @@
 <div class="form-update-board">
   <form class="content" [formGroup]="formBoard">
-    <label for="boardType2">Select a board</label>
-    <select id="boardType2" formControlName="id">
-      <option *ngFor="let board of boards" [value]="board.id">{{ board.boardTitle }}</option>
-    </select>
-    <label for="boardTheme">Select a theme</label>
-    <select id="boardTheme" formControlName="boardTheme">
-      <option value='skyblue'>skyblue</option>
-      <option value='blue'>blue</option>
-      <option value='orange'>orange</option>
-      <option value='green'>green</option>
-      <option value='pink'>pink</option>
-      <option value='grey'>grey</option>
-      <option value='violet'>violet</option>
-    </select>
+    <h2>Update a board</h2>
+
+    <div class="select-container">
+      <label for="boardType2">Select a board</label>
+      <select id="boardType2" formControlName="id">
+        <option *ngFor="let board of boards" [value]="board.id">{{ board.boardTitle }}</option>
+      </select>
+    </div>
+
+    <div class="select-container">
+      <label for="boardTheme">Select a theme</label>
+      <select id="boardTheme" formControlName="boardTheme">
+        <option value='skyblue'>skyblue</option>
+        <option value='blue'>blue</option>
+        <option value='orange'>orange</option>
+        <option value='green'>green</option>
+        <option value='pink'>pink</option>
+        <option value='grey'>grey</option>
+        <option value='violet'>violet</option>
+      </select>
+    </div>
+
     <app-generic-input-text formControlName="boardTitle" type="text" placeholder="Your new board name"></app-generic-input-text>
-    <app-generic-button (click)="UpdateBoard()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
-    <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+
+    <div class="options">
+      <app-generic-button (click)="UpdateBoard()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
+      <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+    </div>
   </form>
 </div>

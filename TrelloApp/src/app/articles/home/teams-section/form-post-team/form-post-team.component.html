@@ -1,8 +1,12 @@
 <div class="form-post-team">
   <form [formGroup]="formTeam" class="content">
     <h2>Create your team</h2>
+
     <app-generic-input-text formControlName="teamName" type="text" placeholder="Your team name"></app-generic-input-text>
-    <app-generic-button (click)="PostTeams()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
-    <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+
+    <div class="options">
+      <app-generic-button (click)="PostTeams()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
+      <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+    </div>
   </form>
 </div>

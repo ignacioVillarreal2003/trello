@@ -1,14 +1,25 @@
 <div class="card-content">
-  <div class="content" *ngIf="card">
-    <button class="close" (click)="CloseWindow()"></button>
-    <h2>{{card.cardTitle}}</h2>
-    <div class="description">
-      <h3>Description</h3>
-      <p>{{card.description}}</p>
-    </div>
-    <div class="date">
-      <p>Start {{card.start.slice(0,10)}}</p>
-      <p>End {{card.end.slice(0,10)}}</p>
-    </div>
+  <div class="content" *ngIf="card && formUpdateTitleCard && formUpdateDescriptionCard && formUpdateEndCard">
+    <button class="close" (click)="CloseWindow()"><p>x</p></button>
+
+    <form [formGroup]="formUpdateTitleCard">
+      <input class="card-title" formControlName="cardTitle" type="text">
+    </form>
+
+    <form [formGroup]="formUpdateDescriptionCard">
+      <div class="description">
+        <h3>Description</h3>
+        <textarea class="list-title" formControlName="description"></textarea>
+      </div>
+    </form>
+
+    <form [formGroup]="formUpdateEndCard">
+      <div class="date">
+        <p>{{card.start.slice(0,10)}}</p>
+        <input class="list-title" formControlName="end" type="datetime-local">
+      </div>
+    </form>
+
+    <button class="delete-card" (click)="DeleteCard()">Delete</button>
   </div>
 </div>

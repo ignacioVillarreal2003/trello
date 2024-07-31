@@ -17,7 +17,7 @@ public class TeamRepository : ITeamRepository
     public async Task<Team> GetTeamAsync(string teamName)
     {
         return await _context.Teams.FindAsync(teamName);
-    }
+    } 
 
     public async Task<bool> AddTeamAsync(Team team)
     {

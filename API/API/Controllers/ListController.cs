@@ -32,7 +32,7 @@ public class ListController : ControllerBase
 
     [HttpPost]
     [Authorize]
-    public async Task<ActionResult<bool>> AddBoard(ListDto list)
+    public async Task<ActionResult<bool>> AddList(ListDto list)
     {
         var result = await _listService.AddListAsync(list);
         if (!result)
@@ -45,7 +45,7 @@ public class ListController : ControllerBase
 
     [HttpDelete("{id}")]
     [Authorize]
-    public async Task<IActionResult> DeleteBoard(long id)
+    public async Task<IActionResult> DeleteList(long id)
     {
         var result = await _listService.DeleteListAsync(id);
         if (!result)
@@ -54,11 +54,11 @@ public class ListController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 
     [HttpPut("{id}")]
     [Authorize]
-    public async Task<IActionResult> UpdateBoard(long id, UpdateListDto list)
+    public async Task<IActionResult> UpdateList(long id, UpdateListDto list)
     {
         var result = await _listService.UpdateListAsync(id, list);
         if (!result)
@@ -67,5 +67,5 @@ public class ListController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 }

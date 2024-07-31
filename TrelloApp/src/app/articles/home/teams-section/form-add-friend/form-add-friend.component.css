@@ -15,12 +15,54 @@
   justify-content: start;
   flex-direction: column;
   width: 370px;
-  gap: 10px;
+  gap: 20px;
   background-color: white;
   border-radius: 10px;
   padding: 20px 0;
 }
 
-select {
+h2 {
+  margin: 0;
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.select-container label {
+  font-size: 18px;
+}
+
+.select-container select {
   width: 80%;
+  appearance: none;
+  padding: 6px 0;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #dcdfe4;
+  border-radius: 3px;
+  outline: none;
+}
+
+.select-container select:hover  {
+  background-color: #eef1f5;
+}
+
+.select-container select:focus-within {
+  border: 2px solid #388bff;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 5px;
 }

@@ -1,10 +1,18 @@
 <div class="form-delete-team">
   <form class="content" [formGroup]="formTeam">
-    <label for="teamType1">Select a team</label>
-    <select id="teamType1" formControlName="teamName">
-      <option *ngFor="let team of teams" [value]="team.teamName">{{ team.teamName }}</option>
-    </select>
-    <app-generic-button (click)="DeleteTeam()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
-    <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+    <h2>Delete a team</h2>
+
+    <div class="select-container">
+      <label for="teamType1">Select a team</label>
+      <select id="teamType1" formControlName="teamName">
+        <option *ngFor="let team of teams" [value]="team.teamName">{{ team.teamName }}</option>
+      </select>
+    </div>
+
+    <div class="options">
+      <app-generic-button (click)="DeleteTeam()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
+      <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+    </div>
+
   </form>
 </div>

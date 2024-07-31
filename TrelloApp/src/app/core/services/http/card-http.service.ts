@@ -41,8 +41,12 @@ export class CardHttpService {
     );
   }
 
-  UpdateCard(id: number, boardTitle: string): Observable<any> {
-    const requestBody: any = { boardTitle: boardTitle }
+  UpdateCard(id: number, cardTitle: string, end: Date | undefined, description: string): Observable<any> {
+    let endIso: string = new Date().toISOString()
+    if (end) {
+      endIso = new Date(end).toISOString();
+    }
+    const requestBody: any = { cardTitle: cardTitle, end: endIso, description: description }
     return this.http.put<any>(this.baseUrl + `/${id}`, requestBody, this.httpOptions).pipe(
       catchError(this.handleError)
     );

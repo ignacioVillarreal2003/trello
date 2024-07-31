@@ -15,10 +15,16 @@ public class UserTeamService
         _teamRepository = teamRepository;
     }
     
-    public async Task<List<Team>> GetUserTeamsAsync(string userEmail)
+    public async Task<List<Team>> GetUserTeamsByUserAsync(string userEmail)
     {
-        return await _userTeamRepository.GetUserTeamsAsync(userEmail);
+        return await _userTeamRepository.GetUserTeamsByUserAsync(userEmail);
     }
+    
+    public async Task<List<User>> GetUserTeamsByTeamAsync(string teamName)
+    {
+        return await _userTeamRepository.GetUserTeamsByTeamAsync(teamName);
+    }
+
     
     public async Task<bool> AddUserTeamAsync(UserTeamDto userTeam)
     {
@@ -35,8 +41,8 @@ public class UserTeamService
         return await _userTeamRepository.AddUserTeamAsync(uT);
     }
     
-    public async Task<bool> DeleteUserTeamAsync(UserTeamDto userTeam)
+    public async Task<bool> DeleteUserTeamAsync(string teamName, string userEmail)
     {
-        return await _userTeamRepository.DeleteUserTeamAsync(userTeam.TeamName, userTeam.UserEmail);
+        return await _userTeamRepository.DeleteUserTeamAsync(teamName, userEmail);
     }
 }

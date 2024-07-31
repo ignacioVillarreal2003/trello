@@ -1,11 +1,19 @@
-<div class="list">
+<div class="list" *ngIf="list">
   <div class="title">
-    <h3>{{list.listTitle}}</h3>
-    <button class="options"><div class="dot"></div><div class="dot"></div><div class="dot"></div></button>
+    <form [formGroup]="formUpdateList">
+      <input class="list-title" formControlName="listTitle" type="text">
+    </form>
+
+    <div class="options">
+      <button (click)="DeleteList()" class="delete"></button>
+    </div>
   </div>
-  <button class="add-card" (click)="OpenPostCard(list.id)">Add card</button>
+
+  <button class="add-card" (click)="OpenPostCard()">Add card</button>
+
   <ul class="cards">
     <li *ngFor="let card of cards"><app-card [card]="card"></app-card></li>
   </ul>
-  <app-post-card class="post-card"></app-post-card>
+
+  <app-form-post-card class="form" id="form-post-card"></app-form-post-card>
 </div>

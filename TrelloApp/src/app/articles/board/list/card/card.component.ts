@@ -19,10 +19,6 @@ export class CardComponent {
 
   constructor(private cardCommunicationService: CardCommunicationService) {}
 
-  ngOnInit(): void {
-
-  }
-
   OpenCard() {
     if (this.card){
       this.cardCommunicationService.changeCard(this.card);

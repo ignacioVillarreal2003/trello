@@ -14,7 +14,7 @@ public class UserTeamRepository : IUserTeamRepository
         _context = context;
     }
     
-    public async Task<List<Team>> GetUserTeamsAsync(string userEmail)
+    public async Task<List<Team>> GetUserTeamsByUserAsync(string userEmail)
     {
         var teams = await _context.UserTeams
             .Where(ut => ut.UserEmail == userEmail)
@@ -25,6 +25,19 @@ public class UserTeamRepository : IUserTeamRepository
             .ToListAsync();
 
         return teams;
+    }
+    
+    public async Task<List<User>> GetUserTeamsByTeamAsync(string teamName)
+    {
+        var users = await _context.UserTeams
+            .Where(ut => ut.TeamName == teamName)
+            .Join(_context.Users,
+                userTeam => userTeam.UserEmail,
+                user => user.Email,
+                (userTeam, user) => user)
+            .ToListAsync();
+
+        return users;
     }
     
     public async Task<bool> AddUserTeamAsync(UserTeam userTeam)

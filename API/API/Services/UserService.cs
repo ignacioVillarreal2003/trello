@@ -30,16 +30,23 @@ public class UserService
     
     public async Task<bool> UpdateUserAsync(string email, UpdateUserDto user)
     {
-        string passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
-
         User u = await _userRepository.GetUserByEmailAsync(email);
         if (u == null)
         {
             return false;
         }
 
-        u.Password = passwordHash;
-        u.Username = user.Username;
+        if (user.Password.Length > 0)
+        {
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            u.Password = passwordHash;
+        }
+
+        if (user.Username.Length > 0)
+        {
+            u.Username = user.Username;
+        }
+        
         return await _userRepository.UpdateUserAsync(u);
     }
     

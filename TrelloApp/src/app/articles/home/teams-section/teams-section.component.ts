@@ -12,6 +12,7 @@ import {FormUpdateTeamComponent} from "./form-update-team/form-update-team.compo
 import {FormDeleteTeamComponent} from "./form-delete-team/form-delete-team.component";
 import {BoardCommunicationService} from "../../../core/services/communication/board-communication.service";
 import {FormAddFriendComponent} from "./form-add-friend/form-add-friend.component";
+import {FormRemoveFriendComponent} from "./form-remove-friend/form-remove-friend.component";
 
 @Component({
   selector: 'app-teams-section',
@@ -24,6 +25,7 @@ import {FormAddFriendComponent} from "./form-add-friend/form-add-friend.componen
     FormUpdateTeamComponent,
     FormDeleteTeamComponent,
     FormAddFriendComponent,
+    FormRemoveFriendComponent,
   ],
   templateUrl: './teams-section.component.html',
   styleUrl: './teams-section.component.css'
@@ -46,7 +48,7 @@ export class TeamsSectionComponent {
   teams: ITeam[] = [];
 
   GetTeams(){
-    this.userTeamHttpService.GetUserTeams(this.userService.email).subscribe(
+    this.userTeamHttpService.GetUserTeamsByUser(this.userService.email).subscribe(
       (result: ITeam[]): void => {
         this.teams = result;
       },
@@ -76,6 +78,12 @@ export class TeamsSectionComponent {
 
   OpenAddFriendForm(): void {
     const form: HTMLElement = document.querySelector('#form-add-friend') as HTMLElement;
+    form.style.display = "flex";
+    this.teamCommunicationService.changeTeam(this.teams);
+  }
+
+  OpenRemoveFriendForm(): void {
+    const form: HTMLElement = document.querySelector('#form-remove-friend') as HTMLElement;
     form.style.display = "flex";
     this.teamCommunicationService.changeTeam(this.teams);
   }

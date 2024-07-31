@@ -31,11 +31,20 @@ export class UserTeamHttpService {
     );
   }
 
-  GetUserTeams(userEmail: string): Observable<any> {
-    return this.http.get<any>(this.baseUrl + `/${userEmail}`, this.httpOptions).pipe(
+  GetUserTeamsByUser(userEmail: string): Observable<any> {
+    return this.http.get<any>(this.baseUrl + `/user/${userEmail}`, this.httpOptions).pipe(
       catchError(this.handleError),
       map(response => {
         return response.teams;
+      })
+    );
+  }
+
+  GetUserTeamsByTeam(teamName: string): Observable<any> {
+    return this.http.get<any>(this.baseUrl + `/team/${teamName}`, this.httpOptions).pipe(
+      catchError(this.handleError),
+      map(response => {
+        return response.users;
       })
     );
   }

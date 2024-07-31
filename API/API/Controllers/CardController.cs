@@ -54,12 +54,13 @@ public class CardController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 
     [HttpPut("{id}")]
     [Authorize]
     public async Task<IActionResult> UpdateCard(long id, UpdateCardDto card)
     {
+        Console.WriteLine(card.CardTitle, card.Description, card.End);
         var result = await _cardService.UpdateCardAsync(id, card);
         if (!result)
         {
@@ -67,5 +68,5 @@ public class CardController : ControllerBase
         }
 
         return NoContent();
-    }
+    } // FUNCIONA
 }

@@ -27,7 +27,7 @@ export class ChangePasswordComponent {
 
   OnSubmitChange(): void {
     if (this.formChangePassword.valid) {
-      this.userHttpService.UpdateUser(this.userService.email, this.userService.username, this.formChangePassword.value.password).subscribe(
+      this.userHttpService.UpdateUser(this.userService.email, '', this.formChangePassword.value.password).subscribe(
         (response): void => {
           this.alertService.SuccessMessage('Password successfully changed')
         },

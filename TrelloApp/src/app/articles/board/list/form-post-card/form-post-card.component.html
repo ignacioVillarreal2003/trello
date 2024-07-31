@@ -1,12 +1,15 @@
-<div class="post-card">
+<div class="form-post-card">
   <form [formGroup]="formCard" class="content">
     <h2>Create your list</h2>
+
     <app-generic-input-text formControlName="cardTitle" type="text" placeholder="Your card name"></app-generic-input-text>
     <app-generic-input-text formControlName="start" type="date" placeholder="A date to start"></app-generic-input-text>
     <app-generic-input-text formControlName="end" type="date" placeholder="A date to end"></app-generic-input-text>
     <app-generic-input-text formControlName="description" type="text" placeholder="A description"></app-generic-input-text>
 
-    <app-generic-button (click)="PostCard()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
-    <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+    <div class="options">
+      <app-generic-button (click)="PostCard()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
+      <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+    </div>
   </form>
 </div>

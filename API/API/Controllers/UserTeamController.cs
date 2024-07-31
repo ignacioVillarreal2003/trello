@@ -18,13 +18,22 @@ public class UserTeamController : ControllerBase
         _userTeamService = userTeamService;
     }
     
-    [HttpGet("{userEmail}")]
+    [HttpGet("user/{userEmail}")]
     [Authorize]
-    public async Task<ActionResult<List<Team>>> GetUserTeams(string userEmail)
+    public async Task<ActionResult<List<Team>>> GetUserTeamsByUser(string userEmail)
     {
-        var teams = await _userTeamService.GetUserTeamsAsync(userEmail);
+        var teams = await _userTeamService.GetUserTeamsByUserAsync(userEmail);
         
         return Ok(new { teams });
+    } // FUNCIONA
+    
+    [HttpGet("team/{teamName}")]
+    [Authorize]
+    public async Task<ActionResult<List<User>>> GetUserTeamsByTeam(string teamName)
+    {
+        var users = await _userTeamService.GetUserTeamsByTeamAsync(teamName);
+        
+        return Ok(new { users });
     } // FUNCIONA
     
     [HttpPost]
@@ -40,16 +49,16 @@ public class UserTeamController : ControllerBase
         return NoContent();
     } // FUNCIONA
     
-    [HttpDelete]
+    [HttpDelete("{teamName}-{userEmail}")]
     [Authorize]
-    public async Task<ActionResult<bool>> DeleteUserTeam(UserTeamDto userTeam)
+    public async Task<ActionResult<bool>> DeleteUserTeam(string teamName, string userEmail)
     {
-        var result = await _userTeamService.DeleteUserTeamAsync(userTeam);
+        var result = await _userTeamService.DeleteUserTeamAsync(teamName, userEmail);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // VER UTILIDAD ---------
+    } // FUNCIONA
 }
