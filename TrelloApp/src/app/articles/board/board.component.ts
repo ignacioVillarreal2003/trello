@@ -5,7 +5,7 @@ import {NgForOf, NgIf} from "@angular/common";
 import { ListHttpService} from "../../core/services/http/list-http.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AlertService} from "../../core/services/alert/alert.service";
-import {PostListComponent} from "../../shared/components/forms/list/post-list/post-list.component";
+import {PostListComponent} from "./forms/post-list/post-list.component";
 import {ThemeCommunicationService} from "../../core/services/communication/theme-communication.service";
 import {IList} from "../../core/models/list.model";
 import {ListCommunicationService} from "../../core/services/communication/list-communication.service";
@@ -16,7 +16,7 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {debounceTime, distinctUntilChanged} from "rxjs";
 import {
   GenericInputTextComponent
-} from "../../shared/components/inputs/generic-input-text/generic-input-text.component";
+} from "../../shared/components/generic-input-text/generic-input-text.component";
 
 @Component({
   selector: 'app-board',

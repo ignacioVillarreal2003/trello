@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../../shared/components/header/header.component";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
-import {GenericButtonComponent} from "../../shared/components/inputs/generic-button/generic-button.component";
-import {BasicPreViewCardComponent} from "./basic-pre-view-card/basic-pre-view-card.component";
+import {GenericButtonComponent} from "../../shared/components/generic-button/generic-button.component";
+import {BasicPreViewCardComponent} from "../../shared/components/basic-pre-view-card/basic-pre-view-card.component";
 import {RouterLink} from "@angular/router";
 import {PresentationComponent} from "./presentation/presentation.component";
 import {TeamsSectionComponent} from "./teams-section/teams-section.component";

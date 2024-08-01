@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import { GenericButtonComponent } from "../../shared/components/inputs/generic-button/generic-button.component";
-import { GenericInputTextComponent } from "../../shared/components/inputs/generic-input-text/generic-input-text.component";
+import { GenericButtonComponent } from "../../shared/components/generic-button/generic-button.component";
+import { GenericInputTextComponent } from "../../shared/components/generic-input-text/generic-input-text.component";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import {NgClass} from "@angular/common";
 import { Router } from '@angular/router';

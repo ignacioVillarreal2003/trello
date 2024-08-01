@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
-import {ITeam} from "../../../../core/models/team.model";
-import {TeamCommunicationService} from "../../../../core/services/communication/team-communication.service";
-import {TeamHttpService} from "../../../../core/services/http/team-http.service";
-import {AlertService} from "../../../../core/services/alert/alert.service";
+import {ITeam} from "../../../../../core/models/team.model";
+import {TeamCommunicationService} from "../../../../../core/services/communication/team-communication.service";
+import {TeamHttpService} from "../../../../../core/services/http/team-http.service";
+import {UserTeamHttpService} from "../../../../../core/services/http/user-team-http.service";
+import {AlertService} from "../../../../../core/services/alert/alert.service";
+import {UserService} from "../../../../../core/services/user/user.service";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {GenericButtonComponent} from "../../../../shared/components/inputs/generic-button/generic-button.component";
+import {GenericButtonComponent} from "../../../../../shared/components/generic-button/generic-button.component";
 import {NgForOf} from "@angular/common";
 
 @Component({
-  selector: 'app-form-update-team',
+  selector: 'app-form-delete-team',
   standalone: true,
   imports: [
     ReactiveFormsModule,
     GenericButtonComponent,
     NgForOf
   ],
-  templateUrl: './form-update-team.component.html',
-  styleUrl: './form-update-team.component.css'
+  templateUrl: './form-delete-team.component.html',
+  styleUrl: './form-delete-team.component.css'
 })
-export class FormUpdateTeamComponent {
+export class FormDeleteTeamComponent {
   teams: ITeam[] = [];
 
   ngOnInit() {
@@ -32,15 +34,14 @@ export class FormUpdateTeamComponent {
               private alertService: AlertService) {}
 
   formTeam: FormGroup = new FormGroup({
-    teamName: new FormControl(''),
-    teamTheme: new FormControl('')
+    teamName: new FormControl('', [Validators.required])
   });
 
-  UpdateTeam(): void {
+  DeleteTeam(): void {
     if (this.formTeam.valid) {
-      this.teamHttpService.UpdateTeam(this.formTeam.value.teamName, this.formTeam.value.teamTheme).subscribe(
+      this.teamHttpService.DeleteTeam(this.formTeam.value.teamName).subscribe(
         (response): void => {
-          this.alertService.SuccessMessage('Successfully updated team.');
+          this.alertService.SuccessMessage('Successfully deleted team.');
           this.teamCommunicationService.triggerRefreshTeams();
           this.CloseWindow();
         },
@@ -54,7 +55,7 @@ export class FormUpdateTeamComponent {
   }
 
   CloseWindow(){
-    const window: HTMLElement = document.querySelector('#form-update-team') as HTMLElement;
+    const window: HTMLElement = document.querySelector('#form-delete-team') as HTMLElement;
     window.style.display = 'none';
   }
 }

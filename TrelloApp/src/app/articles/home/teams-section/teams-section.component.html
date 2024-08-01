@@ -1,17 +1,24 @@
 <div class="teams-section">
+  <div class="title">
+    <h2>Espacio de trabajo de {{username}}</h2>
+    <div class="highlight"></div>
+  </div>
+
   <div class="options">
-    <app-generic-button type="primary" size="large" text="Create a team" (click)="OpenPostTeamForm()"></app-generic-button>
+    <button id="create-team" (click)="OpenPostTeamForm()">Create a team</button>
     <div class="opt">
-      <button class="update" (click)="OpenUpdateTeamForm()"></button>
-      <button class="delete" (click)="OpenDeleteTeamForm()"></button>
-      <button class="add-friend" (click)="OpenAddFriendForm()"><img src="./assets/anadir-amigo.png"></button>
-      <button class="add-friend" (click)="OpenRemoveFriendForm()"><img src="./assets/eliminar-amigo.png"></button>
+      <button (click)="OpenUpdateTeamForm()"><img src="./assets/icons/update.svg"></button>
+      <button (click)="OpenDeleteTeamForm()"><img src="./assets/icons/delete.svg"></button>
+      <button (click)="OpenAddFriendForm()"><img src="./assets/icons/add-friend.svg"></button>
+      <button (click)="OpenRemoveFriendForm()"><img src="./assets/icons/remove-friend.svg"></button>
     </div>
   </div>
+
   <ul>
-    <li *ngFor="let team of teams"><app-basic-pre-view-card (click)="OpenBoards(team.teamName)" size="medium" color="{{team.theme}}" text="{{team.teamName}}"></app-basic-pre-view-card></li>
+    <li *ngFor="let team of teams"><app-basic-pre-view-card (click)="OpenBoards(team.teamName)" size="large" color="{{team.theme}}" text="{{team.teamName}}"></app-basic-pre-view-card></li>
   </ul>
 </div>
+
 <app-form-post-team class="form" id="form-post-team"></app-form-post-team>
 <app-form-update-team class="form" id="form-update-team"></app-form-update-team>
 <app-form-delete-team class="form" id="form-delete-team"></app-form-delete-team>

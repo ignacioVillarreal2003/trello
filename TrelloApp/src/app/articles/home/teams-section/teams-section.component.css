@@ -7,13 +7,76 @@
   height: 100%;
 }
 
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.title h2 {
+  width: 100%;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.title .highlight {
+  width: 100%;
+  height: 1px;
+  background-color: #091e4224;
+}
+
 .options {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
-  margin-bottom: 30px;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+#create-team {
+  width: 400px;
+  height: 45px;
+  font-size: 20px;
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+#create-team:hover {
+  background-color: #0b5ed7;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.options button {
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+}
+
+.options img {
+  width: 45px;
+  height: 45px;
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.options button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.options button:hover img {
+  transform: scale(0.9);
 }
 
 ul {
@@ -21,11 +84,10 @@ ul {
   align-items: start;
   justify-content: center;
   width: 100%;
-  height: auto;
-  grid-template-columns: repeat(auto-fill,200px);
+  height: 100%;
+  grid-template-columns: repeat(auto-fill,230px);
   gap: 20px;
   margin: 0;
-  max-height: 640px;
   overflow-y: auto;
 }
 
@@ -45,57 +107,67 @@ ul::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
-.opt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  background-color: transparent;
-}
-
-.delete {
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ff392a;
-  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.update {
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: orange;
-  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.add-friend {
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: greenyellow;
-  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.add-friend img {
-  width: 24px;
-  height: 24px;
-}
-
-.delete:hover, .update:hover, .add-friend:hover {
-  transform: scale(1.1);
-}
-
 .form {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: none;
+}
+
+@media (max-width: 750px) {
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .title h2 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+
+  .options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .options button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .options img {
+    width: 36px;
+    height: 36px;
+  }
+
+  #create-team {
+    width: 100%;
+    height: 34px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .content {
+    width: 300px;
+    height: 500px;
+  }
+
+  .options button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .options img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .opt {
+    gap: 20px;
+  }
+
+  #create-team {
+    font-size: 17px;
+  }
 }

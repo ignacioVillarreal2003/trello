@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="336"
+   height="376"
+   viewBox="0 0 336 376"
+   version="1.1"
+   id="svg32"
+   sodipodi:docname="add-friend.svg"
+   inkscape:export-filename="..\OneDrive\Escritorio\remove-friend.svg"
+   inkscape:export-xdpi="275.74469"
+   inkscape:export-ydpi="275.74469"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview32"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="a">
+      <path
+         d="M 0,0 H 430 V 430 H 0 Z"
+         id="path1" />
+    </clipPath>
+    <clipPath
+       id="e">
+      <path
+         d="M 0,0 H 430 V 430 H 0 Z"
+         id="path2" />
+    </clipPath>
+    <clipPath
+       id="d">
+      <path
+         d="M 0,0 H 430 V 430 H 0 Z"
+         id="path3" />
+    </clipPath>
+    <clipPath
+       id="c">
+      <path
+         d="M 0,0 H 430 V 430 H 0 Z"
+         id="path4" />
+    </clipPath>
+    <clipPath
+       id="b">
+      <path
+         d="M 0,0 H 430 V 430 H 0 Z"
+         id="path5" />
+    </clipPath>
+  </defs>
+  <g
+     fill="none"
+     clip-path="url(#a)"
+     id="g32"
+     transform="translate(-47,-27)">
+    <g
+       clip-path="url(#b)"
+       style="display:none"
+       id="g11">
+      <g
+         style="display:none"
+         id="g7">
+        <path
+           class="secondary"
+           id="path6"
+           d="" />
+        <path
+           class="secondary"
+           id="path7"
+           d="" />
+      </g>
+      <path
+         class="secondary"
+         style="display:none"
+         id="path8"
+         d="" />
+      <path
+         class="primary"
+         style="display:none"
+         id="path9"
+         d="" />
+      <path
+         class="primary"
+         style="display:none"
+         id="path10"
+         d="" />
+      <path
+         class="primary"
+         style="display:none"
+         id="path11"
+         d="" />
+    </g>
+    <g
+       clip-path="url(#c)"
+       style="display:none"
+       id="g16">
+      <g
+         style="display:none"
+         id="g13">
+        <path
+           class="secondary"
+           id="path12"
+           d="" />
+        <path
+           class="secondary"
+           id="path13"
+           d="" />
+      </g>
+      <path
+         class="primary"
+         style="display:none"
+         id="path14"
+         d="" />
+      <path
+         class="primary"
+         style="display:none"
+         id="path15"
+         d="" />
+      <path
+         class="primary"
+         style="display:none"
+         id="path16"
+         d="" />
+    </g>
+    <g
+       clip-path="url(#d)"
+       style="display:block"
+       id="g22">
+      <path
+         stroke="#000000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="6"
+         d="m 215,60 v 50 m 0.234,-25 H 240 m -50,0 h 25.234 M 115,50 c 0,-11.046 8.954,-20 20,-20 h 160 c 11.046,0 20,8.954 20,20 v 70 c 0,11.046 -8.954,20 -20,20 H 238.333 L 215,175 191.667,140 H 135 c -11.046,0 -20,-8.954 -20,-20 z"
+         class="secondary"
+         style="display:none"
+         id="path17" />
+      <path
+         stroke="#000000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="6"
+         d="m 190,85 h 50 M 115,50 c 0,-11.046 8.954,-20 20,-20 h 160 c 11.046,0 20,8.954 20,20 v 70 c 0,11.046 -8.954,20 -20,20 H 238.333 L 215,175 191.667,140 H 135 c -11.046,0 -20,-8.954 -20,-20 z"
+         class="secondary"
+         style="display:block"
+         id="path18"
+         sodipodi:nodetypes="ccsssssscccsss" />
+      <path
+         stroke="#000000"
+         stroke-linejoin="round"
+         stroke-width="6"
+         d="m 30,-42.5 c 0,16.569 -13.431,30 -30,30 -16.569,0 -30,-13.431 -30,-30 0,-16.569 13.431,-30 30,-30 16.569,0 30,13.431 30,30 z M 12.217,72.5 H -65 v -15 c 0,-24.853 20.147,-45 45,-45 h 40 a 44.8,44.8 0 0 1 21.493,5.454"
+         class="primary"
+         style="display:block"
+         transform="translate(115,307.5)"
+         id="path19" />
+      <path
+         stroke="#000000"
+         stroke-linejoin="round"
+         stroke-width="6"
+         d="m 30,-42.5 c 0,16.569 -13.431,30 -30,30 -16.569,0 -30,-13.431 -30,-30 0,-16.569 13.431,-30 30,-30 16.569,0 30,13.431 30,30 z m -40.145,115 H 65 v -15 c 0,-24.853 -20.147,-45 -45,-45 h -40 a 44.8,44.8 0 0 0 -23.288,6.487"
+         class="primary"
+         style="display:block"
+         transform="translate(315,307.5)"
+         id="path20" />
+      <path
+         stroke="#000000"
+         stroke-linejoin="round"
+         stroke-width="6"
+         d="m -35,17.5 c -30.376,0 -55,24.624 -55,55 v 25 H 90 v -25 c 0,-30.376 -24.624,-55 -55,-55 z m 80,-70 c 0,24.853 -20.147,45 -45,45 -24.853,0 -45,-20.147 -45,-45 0,-24.853 20.147,-45 45,-45 24.853,0 45,20.147 45,45 z"
+         class="primary"
+         style="display:block"
+         transform="translate(215,302.5)"
+         id="path21" />
+      <path
+         class="secondary"
+         style="display:none"
+         id="path22"
+         d="" />
+    </g>
+    <g
+       clip-path="url(#e)"
+       style="display:none"
+       id="g31">
+      <g
+         style="display:none"
+         id="g24">
+        <path
+           class="primary"
+           id="path23"
+           d="" />
+        <path
+           class="primary"
+           id="path24"
+           d="" />
+      </g>
+      <g
+         style="display:none"
+         id="g26">
+        <path
+           class="primary"
+           id="path25"
+           d="" />
+        <path
+           class="primary"
+           id="path26"
+           d="" />
+      </g>
+      <g
+         style="display:none"
+         id="g28">
+        <path
+           class="primary"
+           id="path27"
+           d="" />
+        <path
+           class="primary"
+           id="path28"
+           d="" />
+      </g>
+      <g
+         style="display:none"
+         id="g30">
+        <path
+           class="secondary"
+           id="path29"
+           d="" />
+        <path
+           class="secondary"
+           id="path30"
+           d="" />
+      </g>
+    </g>
+  </g>
+</svg>

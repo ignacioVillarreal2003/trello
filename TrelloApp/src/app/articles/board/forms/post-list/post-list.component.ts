@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {GenericButtonComponent} from "../../../inputs/generic-button/generic-button.component";
-import {GenericInputTextComponent} from "../../../inputs/generic-input-text/generic-input-text.component";
-import {AlertService} from "../../../../../core/services/alert/alert.service";
+import {GenericButtonComponent} from "../../../../shared/components/generic-button/generic-button.component";
+import {GenericInputTextComponent} from "../../../../shared/components/generic-input-text/generic-input-text.component";
+import {AlertService} from "../../../../core/services/alert/alert.service";
 import {ActivatedRoute} from "@angular/router";
-import {ListHttpService} from "../../../../../core/services/http/list-http.service";
-import {ListCommunicationService} from "../../../../../core/services/communication/list-communication.service";
+import {ListHttpService} from "../../../../core/services/http/list-http.service";
+import {ListCommunicationService} from "../../../../core/services/communication/list-communication.service";
 
 @Component({
   selector: 'app-post-list',

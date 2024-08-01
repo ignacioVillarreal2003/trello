@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {GenericButtonComponent} from "../../../../shared/components/inputs/generic-button/generic-button.component";
+import {GenericButtonComponent} from "../../../../../shared/components/generic-button/generic-button.component";
 import {NgForOf} from "@angular/common";
-import {ITeam} from "../../../../core/models/team.model";
-import {IUser} from "../../../../core/models/user.model";
-import {TeamCommunicationService} from "../../../../core/services/communication/team-communication.service";
-import {UserHttpService} from "../../../../core/services/http/user-http.service";
-import {UserTeamHttpService} from "../../../../core/services/http/user-team-http.service";
-import {AlertService} from "../../../../core/services/alert/alert.service";
+import {ITeam} from "../../../../../core/models/team.model";
+import {IUser} from "../../../../../core/models/user.model";
+import {TeamCommunicationService} from "../../../../../core/services/communication/team-communication.service";
+import {UserHttpService} from "../../../../../core/services/http/user-http.service";
+import {UserTeamHttpService} from "../../../../../core/services/http/user-team-http.service";
+import {AlertService} from "../../../../../core/services/alert/alert.service";
 
 @Component({
   selector: 'app-form-remove-friend',

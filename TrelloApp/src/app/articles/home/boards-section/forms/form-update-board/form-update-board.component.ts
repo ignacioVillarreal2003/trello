@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import {GenericButtonComponent} from "../../../../shared/components/inputs/generic-button/generic-button.component";
+import {GenericButtonComponent} from "../../../../../shared/components/generic-button/generic-button.component";
 import {NgForOf} from "@angular/common";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ITeam} from "../../../../core/models/team.model";
-import {TeamCommunicationService} from "../../../../core/services/communication/team-communication.service";
-import {TeamHttpService} from "../../../../core/services/http/team-http.service";
-import {AlertService} from "../../../../core/services/alert/alert.service";
-import {BoardCommunicationService} from "../../../../core/services/communication/board-communication.service";
-import {BoardHttpService} from "../../../../core/services/http/board-http.service";
-import {IBoard} from "../../../../core/models/board.model";
+import {ITeam} from "../../../../../core/models/team.model";
+import {TeamCommunicationService} from "../../../../../core/services/communication/team-communication.service";
+import {TeamHttpService} from "../../../../../core/services/http/team-http.service";
+import {AlertService} from "../../../../../core/services/alert/alert.service";
+import {BoardCommunicationService} from "../../../../../core/services/communication/board-communication.service";
+import {BoardHttpService} from "../../../../../core/services/http/board-http.service";
+import {IBoard} from "../../../../../core/models/board.model";
 import {
   GenericInputTextComponent
-} from "../../../../shared/components/inputs/generic-input-text/generic-input-text.component";
+} from "../../../../../shared/components/generic-input-text/generic-input-text.component";
 
 @Component({
   selector: 'app-form-update-board',

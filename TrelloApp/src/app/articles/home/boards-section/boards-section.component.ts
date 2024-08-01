@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {BasicPreViewCardComponent} from "../basic-pre-view-card/basic-pre-view-card.component";
-import {GenericButtonComponent} from "../../../shared/components/inputs/generic-button/generic-button.component";
+import {BasicPreViewCardComponent} from "../../../shared/components/basic-pre-view-card/basic-pre-view-card.component";
+import {GenericButtonComponent} from "../../../shared/components/generic-button/generic-button.component";
 import {NgForOf} from "@angular/common";
 import {IBoard} from "../../../core/models/board.model";
 import {BoardCommunicationService} from "../../../core/services/communication/board-communication.service";
@@ -8,9 +8,9 @@ import {BoardHttpService} from "../../../core/services/http/board-http.service";
 import {UserService} from "../../../core/services/user/user.service";
 import {Router} from "@angular/router";
 import {AlertService} from "../../../core/services/alert/alert.service";
-import {FormPostBoardComponent} from "./form-post-board/form-post-board.component";
-import {FormDeleteBoardComponent} from "./form-delete-board/form-delete-board.component";
-import {FormUpdateBoardComponent} from "./form-update-board/form-update-board.component";
+import {FormPostBoardComponent} from "./forms/form-post-board/form-post-board.component";
+import {FormDeleteBoardComponent} from "./forms/form-delete-board/form-delete-board.component";
+import {FormUpdateBoardComponent} from "./forms/form-update-board/form-update-board.component";
 
 @Component({
   selector: 'app-boards-section',
@@ -28,10 +28,13 @@ import {FormUpdateBoardComponent} from "./form-update-board/form-update-board.co
 })
 export class BoardsSectionComponent {
 
+  username: string = '';
+
   ngOnInit(): void{
     this.boardCommunicationService.refreshBoards$.subscribe(() => {
       this.GetBoards(this.userService.teamName);
     });
+    this.username = this.userService.username;
   }
 
   constructor(private boardCommunicationService: BoardCommunicationService,

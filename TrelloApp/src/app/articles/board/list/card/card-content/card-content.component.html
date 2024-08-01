@@ -16,7 +16,7 @@
     <form [formGroup]="formUpdateEndCard">
       <div class="date">
         <p>{{card.start.slice(0,10)}}</p>
-        <input class="list-title" formControlName="end" type="datetime-local">
+        <input formControlName="end" type="datetime-local">
       </div>
     </form>
 

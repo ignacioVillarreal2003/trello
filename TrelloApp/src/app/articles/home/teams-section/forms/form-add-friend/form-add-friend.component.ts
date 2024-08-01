@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import {GenericButtonComponent} from "../../../../shared/components/inputs/generic-button/generic-button.component";
+import {GenericButtonComponent} from "../../../../../shared/components/generic-button/generic-button.component";
 import {NgForOf} from "@angular/common";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ITeam} from "../../../../core/models/team.model";
-import {TeamCommunicationService} from "../../../../core/services/communication/team-communication.service";
-import {TeamHttpService} from "../../../../core/services/http/team-http.service";
-import {AlertService} from "../../../../core/services/alert/alert.service";
-import {IUser} from "../../../../core/models/user.model";
-import {UserHttpService} from "../../../../core/services/http/user-http.service";
-import {UserTeamHttpService} from "../../../../core/services/http/user-team-http.service";
+import {ITeam} from "../../../../../core/models/team.model";
+import {TeamCommunicationService} from "../../../../../core/services/communication/team-communication.service";
+import {TeamHttpService} from "../../../../../core/services/http/team-http.service";
+import {AlertService} from "../../../../../core/services/alert/alert.service";
+import {IUser} from "../../../../../core/models/user.model";
+import {UserHttpService} from "../../../../../core/services/http/user-http.service";
+import {UserTeamHttpService} from "../../../../../core/services/http/user-team-http.service";
 
 @Component({
   selector: 'app-form-add-friend',

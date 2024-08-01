@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {GenericInputTextComponent} from "../../../inputs/generic-input-text/generic-input-text.component";
-import {GenericButtonComponent} from "../../../inputs/generic-button/generic-button.component";
+import {GenericInputTextComponent} from "../../../generic-input-text/generic-input-text.component";
+import {GenericButtonComponent} from "../../../generic-button/generic-button.component";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {AlertService} from "../../../../../core/services/alert/alert.service";
 import {UserService} from "../../../../../core/services/user/user.service";

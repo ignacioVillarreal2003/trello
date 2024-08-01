@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import {GenericButtonComponent} from "../../../../shared/components/inputs/generic-button/generic-button.component";
+import {GenericButtonComponent} from "../../../../../shared/components/generic-button/generic-button.component";
 import {
   GenericInputTextComponent
-} from "../../../../shared/components/inputs/generic-input-text/generic-input-text.component";
+} from "../../../../../shared/components/generic-input-text/generic-input-text.component";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {BoardCommunicationService} from "../../../../core/services/communication/board-communication.service";
-import {BoardHttpService} from "../../../../core/services/http/board-http.service";
-import {UserTeamHttpService} from "../../../../core/services/http/user-team-http.service";
-import {AlertService} from "../../../../core/services/alert/alert.service";
-import {UserService} from "../../../../core/services/user/user.service";
+import {BoardCommunicationService} from "../../../../../core/services/communication/board-communication.service";
+import {BoardHttpService} from "../../../../../core/services/http/board-http.service";
+import {UserTeamHttpService} from "../../../../../core/services/http/user-team-http.service";
+import {AlertService} from "../../../../../core/services/alert/alert.service";
+import {UserService} from "../../../../../core/services/user/user.service";
 
 @Component({
   selector: 'app-form-post-board',

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {GenericButtonComponent} from "../../../../shared/components/inputs/generic-button/generic-button.component";
+import {GenericButtonComponent} from "../../../../shared/components/generic-button/generic-button.component";
 import {
   GenericInputTextComponent
-} from "../../../../shared/components/inputs/generic-input-text/generic-input-text.component";
+} from "../../../../shared/components/generic-input-text/generic-input-text.component";
 import {ActivatedRoute} from "@angular/router";
 import {ListCommunicationService} from "../../../../core/services/communication/list-communication.service";
 import {CardCommunicationService} from "../../../../core/services/communication/card-communication.service";

@@ -1,15 +1,22 @@
 <div class="boards-section">
+  <div class="title">
+    <h2>Espacio de trabajo de {{username}}</h2>
+    <div class="highlight"></div>
+  </div>
+
   <div class="options">
-    <app-generic-button (click)="OpenPostBoardForm()" class="button" type="primary" size="large" text="Create a board"></app-generic-button>
+    <button id="create-board" (click)="OpenPostBoardForm()">Create a team</button>
     <div class="opt">
-      <button class="update" (click)="OpenUpdateBoardForm()"></button>
-      <button class="delete" (click)="OpenDeleteBoardForm()"></button>
+      <button (click)="OpenUpdateBoardForm()"><img src="./assets/icons/update.svg"></button>
+      <button (click)="OpenDeleteBoardForm()"><img src="./assets/icons/delete.svg"></button>
     </div>
   </div>
+
   <ul>
-    <app-basic-pre-view-card (click)="OpenBoard(board)" size="medium" color="{{board.theme}}" text="{{board.boardTitle}}" *ngFor="let board of boards"></app-basic-pre-view-card>
+    <app-basic-pre-view-card (click)="OpenBoard(board)" size="large" color="{{board.theme}}" text="{{board.boardTitle}}" *ngFor="let board of boards"></app-basic-pre-view-card>
   </ul>
 </div>
+
 <app-form-post-board class="form" id="form-post-board"></app-form-post-board>
 <app-form-delete-board class="form" id="form-delete-board"></app-form-delete-board>
 <app-form-update-board class="form" id="form-update-board"></app-form-update-board>

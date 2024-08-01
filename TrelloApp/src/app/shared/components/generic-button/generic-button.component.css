@@ -75,3 +75,13 @@ button.dark {
 button.dark:hover {
   background-color: #424649;
 }
+
+@media (max-width: 1100px) {
+  button.large {
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+
+}

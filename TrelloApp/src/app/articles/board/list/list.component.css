@@ -37,21 +37,11 @@
   background-color: hsla(0, 0%, 0%, 0.16);
 }
 
-.options {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.options button {
+.delete {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: none;
-}
-
-.delete {
   background-color: red;
 }
 
@@ -105,4 +95,27 @@
   left: 0;
   width: 100%;
   display: none;
+}
+
+@media (max-width: 750px) {
+  .list {
+    width: 150px;
+    padding: 5px 5px 10px 5px;
+  }
+
+  .list-title {
+    font-size: 14px;
+    max-width: 120px;
+  }
+
+  .delete {
+    width: 14px;
+    height: 14px;
+  }
+
+  .add-card {
+    height: 30px;
+    font-size: 12px;
+  }
+
 }
