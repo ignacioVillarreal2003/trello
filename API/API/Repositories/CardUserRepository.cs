@@ -1,6 +1,7 @@
 using API.Context;
 using API.Interfaces.Repositories;
 using API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Repository;
 
@@ -12,7 +13,20 @@ public class CardUserRepository : ICardUserRepository
     {
         _context = context;
     }
-    
+
+    public async Task<List<User>> GetCardUserAsync(long cardId)
+    {
+        var users = await _context.CardUsers
+            .Where(cU => cU.CardId == cardId)
+            .Join(_context.Users,
+                cardUser => cardUser.UserEmail,
+                user => user.Email,
+                (cardUser, user) => user)
+            .ToListAsync();
+
+        return users;
+    }
+
     public async Task<bool> AddCardUserAsync(CardUser cardUser)
     {
         _context.CardUsers.Add(cardUser);

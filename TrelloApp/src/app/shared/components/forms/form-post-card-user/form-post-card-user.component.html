@@ -1,0 +1,17 @@
+<div class="form-post-card-user">
+  <form [formGroup]="formPostCardUser" class="content">
+    <h2>Asign a user</h2>
+
+    <div class="select-container">
+      <label for="userType5">Select a user</label>
+      <select id="userType5" formControlName="userEmail">
+        <option *ngFor="let user of users" [value]="user.email">{{ user.email }}</option>
+      </select>
+    </div>
+
+    <div class="options">
+      <app-generic-button (click)="PostCardUser()" buttonType="submit" text="Submit" type="success" size="medium"></app-generic-button>
+      <app-generic-button (click)="CloseWindow()" buttonType="reset" text="Cancel" type="danger" size="medium"></app-generic-button>
+    </div>
+  </form>
+</div>

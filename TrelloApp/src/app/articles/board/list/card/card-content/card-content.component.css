@@ -18,8 +18,8 @@
   min-height: 400px;
   gap: 10px;
   background-color: white;
-  padding: 10px;
   position: relative;
+  padding-top: 10px;
 }
 
 form {
@@ -49,7 +49,7 @@ form {
   display: flex;
   width: 100%;
   flex-direction: column;
-  height: 240px;
+  height: 200px;
 }
 
 .description h3 {
@@ -116,14 +116,117 @@ form {
 
 .delete-card {
   width: 100%;
-  position: absolute;
-  bottom: 0;
   height: 40px;
   border: none;
 }
 
 .delete-card:hover {
   background: red;
+}
+
+.comments {
+  width: 90%;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.comments button {
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.comments ul {
+  margin: 0;
+  width: 100%;
+  height: 120px;
+  overflow-y: auto;
+}
+
+.comments p {
+  font-size: 16px;
+  padding: 5px;
+  margin: 0;
+}
+
+.usuarios {
+  width: 90%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.usuarios button {
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.usuarios ul {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+  margin: 0;
+  padding: 5px;
+  overflow-y: auto;
+}
+
+.usuarios p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.label {
+  width: 90%;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.label button {
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.label ul {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  margin: 0;
+  padding: 5px;
+  overflow-x: auto;
+}
+
+.label p {
+  font-size: 16px;
+  margin: 0;
+  background-color: #198754;
+  padding: 5px;
+  white-space: nowrap;
+}
+
+.form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  z-index: 10;
 }
 
 @media (max-width: 750px) {

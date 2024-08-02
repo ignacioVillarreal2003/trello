@@ -16,40 +16,20 @@ public class CommentController : ControllerBase
     {
         _commentService = commentService;
     }
-
+    
     [HttpGet("{id}")]
     [Authorize]
-    public async Task<ActionResult<Comment>> GetCommentById(long id)
+    public async Task<ActionResult<List<Comment>>> GetComment(long id)
     {
-        var comment = await _commentService.GetCommentByIdAsync(id);
-        if (comment == null)
+        var comments = await _commentService.GetCommentAsync(id);
+        if (comments == null)
         {
             return NotFound();
         }
-
-        return comment;
+        
+        return Ok(new { comments });
     }
     
-    [HttpGet("card/{id}")]
-    [Authorize]
-    public async Task<ActionResult<List<Comment>>> GetCommentByCardId(long id)
-    {
-        var comment = await _commentService.GetCommentByCardIdAsync(id);
-        if (comment == null)
-        {
-            return NotFound();
-        }
-
-        return comment;
-    }
-
-    [HttpGet]
-    [Authorize]
-    public async Task<ActionResult<List<Comment>>> GetComments()
-    {
-        return await _commentService.GetCommentsAsync();
-    }
-
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<bool>> AddComment(CommentDto comment)

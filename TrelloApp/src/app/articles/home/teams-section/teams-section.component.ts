@@ -7,12 +7,12 @@ import {UserService} from "../../../core/services/user/user.service";
 import {AlertService} from "../../../core/services/alert/alert.service";
 import {ITeam} from "../../../core/models/team.model";
 import {UserTeamHttpService} from "../../../core/services/http/user-team-http.service";
-import {FormPostTeamComponent} from "./forms/form-post-team/form-post-team.component";
-import {FormUpdateTeamComponent} from "./forms/form-update-team/form-update-team.component";
-import {FormDeleteTeamComponent} from "./forms/form-delete-team/form-delete-team.component";
+import {FormPostTeamComponent} from "../../../shared/components/forms/form-post-team/form-post-team.component";
+import {FormUpdateTeamComponent} from "../../../shared/components/forms/form-update-team/form-update-team.component";
+import {FormDeleteTeamComponent} from "../../../shared/components/forms/form-delete-team/form-delete-team.component";
 import {BoardCommunicationService} from "../../../core/services/communication/board-communication.service";
-import {FormAddFriendComponent} from "./forms/form-add-friend/form-add-friend.component";
-import {FormRemoveFriendComponent} from "./forms/form-remove-friend/form-remove-friend.component";
+import {FormAddFriendComponent} from "../../../shared/components/forms/form-add-friend/form-add-friend.component";
+import {FormRemoveFriendComponent} from "../../../shared/components/forms/form-remove-friend/form-remove-friend.component";
 
 @Component({
   selector: 'app-teams-section',

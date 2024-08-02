@@ -12,7 +12,7 @@ import {ListHttpService} from "../../../core/services/http/list-http.service";
 import {HttpResponse} from "@angular/common/http";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {debounceTime, distinctUntilChanged} from "rxjs";
-import {FormPostCardComponent} from "./form-post-card/form-post-card.component";
+import {FormPostCardComponent} from "../../../shared/components/forms/form-post-card/form-post-card.component";
 
 @Component({
   selector: 'app-list',

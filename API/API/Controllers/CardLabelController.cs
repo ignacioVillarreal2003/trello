@@ -1,9 +1,11 @@
+using System.Reflection.Emit;
 using API.DTO.CardLabel;
 using API.DTO.Team;
 using API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using ApiLabel = API.Models.Label;
 
 namespace API.Controllers;
 
@@ -16,6 +18,15 @@ public class CardLabelController : ControllerBase
     public CardLabelController(CardLabelService cardLabelService)
     {
         _cardLabelService = cardLabelService;
+    }
+    
+    [HttpGet("{cardId}")]
+    [Authorize]
+    public async Task<ActionResult<List<ApiLabel>>> GetCardLabel(long cardId)
+    {
+        var labels = await _cardLabelService.GetCardLabelAsync(cardId);
+
+        return Ok( new {labels} );
     }
     
     [HttpPost]
@@ -31,11 +42,11 @@ public class CardLabelController : ControllerBase
         return NoContent();
     }
     
-    [HttpDelete]
+    [HttpDelete("{cardId}-{labelTitle}-{color}")]
     [Authorize]
-    public async Task<ActionResult<bool>> DeleteCardLabel(CardLabelDto cardLabel)
+    public async Task<ActionResult<bool>> DeleteCardLabel(long cardId, string labelTitle, string color)
     {
-        var result = await _cardLabelService.DeleteCardLabelAsync(cardLabel);
+        var result = await _cardLabelService.DeleteCardLabelAsync(cardId, labelTitle, color);
         if (!result)
         {
             return NotFound();

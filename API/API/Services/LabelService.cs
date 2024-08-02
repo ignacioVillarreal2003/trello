@@ -1,6 +1,7 @@
 using API.DTO.Label;
 using API.Interfaces.Repositories;
 using API.Models;
+using ApiLabel = API.Models.Label;
 
 namespace API.Services;
 
@@ -13,19 +14,14 @@ public class LabelService
         _labelRepository = labelRepository;
     }
 
-    public async Task<Label> GetLabelAsync(string labelTitle, string color)
-    {
-        return await _labelRepository.GetLabelAsync(labelTitle, color);
-    }
-
-    public async Task<List<Label>> GetLabelsAsync()
+    public async Task<List<ApiLabel>> GetLabelsAsync()
     {
         return await _labelRepository.GetLabelsAsync();
     }
 
     public async Task<bool> AddLabelAsync(LabelDto label)
     {
-        Label l = new Label();
+        ApiLabel l = new ApiLabel();
         l.LabelTitle = label.LabelTitle;
         l.Color = label.Color;
         

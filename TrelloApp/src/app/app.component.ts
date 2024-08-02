@@ -6,12 +6,11 @@ import { HomeComponent } from "./articles/home/home.component";
 import {ChangePasswordComponent} from "./shared/components/header/user-configurations/change-password/change-password.component";
 import {ListComponent} from "./articles/board/list/list.component";
 import {BoardComponent} from "./articles/board/board.component";
-import {PruebaComponent} from "./prueba/prueba.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, UserAccessComponent, HeaderComponent, HomeComponent, ChangePasswordComponent, ListComponent, BoardComponent, PruebaComponent],
+  imports: [RouterOutlet, RouterLink, UserAccessComponent, HeaderComponent, HomeComponent, ChangePasswordComponent, ListComponent, BoardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

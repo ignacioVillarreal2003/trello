@@ -1,11 +1,12 @@
 using API.Models;
+using ApiLabel = API.Models.Label;
 
 namespace API.Interfaces.Repositories;
 
 public interface ILabelRepository
 {
-    Task<Label> GetLabelAsync(string labelTitle, string color);
-    Task<List<Label>> GetLabelsAsync();
-    Task<bool> AddLabelAsync(Label label);
+    Task<ApiLabel> GetLabelAsync(string labelTitle, string color);
+    Task<List<ApiLabel>> GetLabelsAsync();
+    Task<bool> AddLabelAsync(ApiLabel label);
     Task<bool> DeleteLabelAsync(string labelTitle, string color);
 }

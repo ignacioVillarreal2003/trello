@@ -1,6 +1,7 @@
 using API.DTO.CardLabel;
 using API.DTO.CardUser;
 using API.DTO.Team;
+using API.Models;
 using API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -19,6 +20,15 @@ public class CardUserController : ControllerBase
         _cardUserService = cardUserService;
     }
     
+    [HttpGet("{cardId}")]
+    [Authorize]
+    public async Task<ActionResult<List<User>>> GetCardUser(long cardId)
+    {
+        var result = await _cardUserService.GetCardUserAsync(cardId);
+       
+        return result;
+    }
+    
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<bool>> AddCardUser(CardUserDto cardUser)
@@ -32,11 +42,11 @@ public class CardUserController : ControllerBase
         return NoContent();
     }
     
-    [HttpDelete]
+    [HttpDelete("{cardId}-{userEmail}")]
     [Authorize]
-    public async Task<ActionResult<bool>> DeleteCardUser(CardUserDto cardUser)
+    public async Task<ActionResult<bool>> DeleteCardUser(long cardId, string userEmail)
     {
-        var result = await _cardUserService.DeleteCardUserAsync(cardUser);
+        var result = await _cardUserService.DeleteCardUserAsync(cardId, userEmail);
         if (!result)
         {
             return NotFound();

@@ -2,6 +2,7 @@ using API.Context;
 using API.Interfaces.Repositories;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
+using ApiLabel = API.Models.Label;
 
 namespace API.Repository;
 
@@ -14,17 +15,17 @@ public class LabelRepository : ILabelRepository
         _context = context;
     }
 
-    public async Task<Label> GetLabelAsync(string labelTitle, string color)
+    public async Task<ApiLabel> GetLabelAsync(string labelTitle, string color)
     {
         return await _context.Labels.FindAsync(labelTitle, color);
     }
 
-    public async Task<List<Label>> GetLabelsAsync()
+    public async Task<List<ApiLabel>> GetLabelsAsync()
     {
         return await _context.Labels.ToListAsync();
     }
 
-    public async Task<bool> AddLabelAsync(Label label)
+    public async Task<bool> AddLabelAsync(ApiLabel label)
     {
         _context.Labels.Add(label);
         return await _context.SaveChangesAsync() > 0;

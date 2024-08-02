@@ -1,6 +1,8 @@
 using API.Context;
 using API.Interfaces.Repositories;
 using API.Models;
+using Microsoft.EntityFrameworkCore;
+using ApiLabel = API.Models.Label;
 
 namespace API.Repository;
 
@@ -11,6 +13,19 @@ public class CardLabelRepository : ICardLabelRepository
     public CardLabelRepository(AppDbContext context)
     {
         _context = context;
+    }
+
+    public async Task<List<ApiLabel>> GetCardLabelAsync(long cardId)
+    {
+        var labels = await _context.CardLabels
+            .Where(cl => cl.CardId == cardId)
+            .Join(_context.Labels,
+                cardLabel => new { cardLabel.LabelTitle, cardLabel.Color },
+                label => new { label.LabelTitle, label.Color },
+                (cardLabel, label) => label)
+            .ToListAsync();
+
+        return labels;
     }
     
     public async Task<bool> AddCardLabelAsync(CardLabel cardLabel)

@@ -20,6 +20,30 @@
       </div>
     </form>
 
+    <div class="comments">
+      <button (click)="OpenPostComment()">Add comment</button>
+      <ul>
+        <li *ngFor="let comment of comments"><p>{{ comment.commentDescription }}</p></li>
+      </ul>
+    </div>
+
+    <div class="usuarios">
+      <button (click)="OpenPostCardUsers()">Asign user</button>
+      <ul>
+        <li *ngFor="let user of users"><p>{{ user.email }}</p></li>
+      </ul>
+    </div>
+
+    <div class="label">
+      <button (click)="OpenPostLabel()">Add label</button>
+      <ul>
+        <li *ngFor="let label of labels"><p>{{ label.labelTitle }}</p></li>
+      </ul>
+    </div>
+
     <button class="delete-card" (click)="DeleteCard()">Delete</button>
   </div>
 </div>
+<app-form-post-comment class="form" id="form-post-comment"></app-form-post-comment>
+<app-form-post-card-user class="form" id="form-post-card-user"></app-form-post-card-user>
+<app-form-post-label class="form" id="form-post-label"></app-form-post-label>

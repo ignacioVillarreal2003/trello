@@ -1,6 +1,7 @@
 using API.DTO.CardLabel;
 using API.Interfaces.Repositories;
 using API.Models;
+using ApiLabel = API.Models.Label;
 
 namespace API.Services;
 
@@ -11,6 +12,11 @@ public class CardLabelService
     public CardLabelService(ICardLabelRepository cardLabelRepository)
     {
         _cardLabelRepository = cardLabelRepository;
+    }
+
+    public async Task<List<ApiLabel>> GetCardLabelAsync(long cardId)
+    {
+        return await _cardLabelRepository.GetCardLabelAsync(cardId);
     }
     
     public async Task<bool> AddCardLabelAsync(CardLabelDto cardLabel)
@@ -23,8 +29,8 @@ public class CardLabelService
         return await _cardLabelRepository.AddCardLabelAsync(cL);
     }
     
-    public async Task<bool> DeleteCardLabelAsync(CardLabelDto cardLabel)
+    public async Task<bool> DeleteCardLabelAsync(long cardId, string labelTitle, string color)
     {
-        return await _cardLabelRepository.DeleteCardLabelAsync(cardLabel.CardId, cardLabel.LabelTitle, cardLabel.Color);
+        return await _cardLabelRepository.DeleteCardLabelAsync(cardId, labelTitle, color);
     }
 }

@@ -3,6 +3,7 @@ using API.Models;
 using API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ApiLabel = API.Models.Label;
 
 namespace API.Controllers;
 
@@ -17,22 +18,9 @@ public class LabelController : ControllerBase
         _labelService = labelService;
     }
 
-    [HttpGet("{labelTitle}-{color}")]
-    [Authorize]
-    public async Task<ActionResult<Label>> GetLabel(string labelTitle, string color)
-    {
-        var label = await _labelService.GetLabelAsync(labelTitle, color);
-        if (label == null)
-        {
-            return NotFound();
-        }
-
-        return label;
-    }
-
     [HttpGet]
     [Authorize]
-    public async Task<ActionResult<List<Label>>> GetLabels()
+    public async Task<ActionResult<List<ApiLabel>>> GetLabels()
     {
         return await _labelService.GetLabelsAsync();
     }

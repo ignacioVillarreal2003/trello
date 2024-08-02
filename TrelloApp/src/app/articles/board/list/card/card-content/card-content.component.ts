@@ -1,12 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { ICard } from "../../../../../core/models/card.model";
-import { NgIf } from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import { CardCommunicationService } from "../../../../../core/services/communication/card-communication.service";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { CardHttpService } from "../../../../../core/services/http/card-http.service";
 import { AlertService } from "../../../../../core/services/alert/alert.service";
 import { HttpResponse } from "@angular/common/http";
 import { debounceTime, distinctUntilChanged } from 'rxjs';
+import {CommentHttpService} from "../../../../../core/services/http/comment-http.service";
+import {IComment} from "../../../../../core/models/comment.model";
+import {FormPostCommentComponent} from "../../../../../shared/components/forms/form-post-comment/form-post-comment.component";
+import {
+  CommentCommunicationServiceService
+} from "../../../../../core/services/communication/comment-communication-service.service";
+import {IUser} from "../../../../../core/models/user.model";
+import {CardUserHttpService} from "../../../../../core/services/http/card-user-http.service";
+import {CardUserCommunicationService} from "../../../../../core/services/communication/card-user-communication.service";
+import {
+  FormPostCardUserComponent
+} from "../../../../../shared/components/forms/form-post-card-user/form-post-card-user.component";
+import {ILabel} from "../../../../../core/models/label.model";
+import {LabelCommunicationService} from "../../../../../core/services/communication/label-communication.service";
+import {FormPostLabelComponent} from "../../../../../shared/components/forms/form-post-label/form-post-label.component";
+import {CardLabelHttpService} from "../../../../../core/services/http/card-label-http.service";
 
 @Component({
   selector: 'app-card-content',
@@ -14,13 +30,20 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
   imports: [
     NgIf,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormPostCommentComponent,
+    NgForOf,
+    FormPostCardUserComponent,
+    FormPostLabelComponent
   ],
   templateUrl: './card-content.component.html',
   styleUrls: ['./card-content.component.css']
 })
 export class CardContentComponent implements OnInit {
   card: ICard | undefined = undefined;
+  comments: IComment[] = [];
+  users: IUser[] = [];
+  labels: ILabel[] = []
 
   formUpdateTitleCard: FormGroup | undefined = undefined;
   formUpdateEndCard: FormGroup | undefined = undefined;
@@ -28,7 +51,13 @@ export class CardContentComponent implements OnInit {
 
   constructor(private cardCommunicationService: CardCommunicationService,
               private cardHttpService: CardHttpService,
-              private alertService: AlertService) {}
+              private alertService: AlertService,
+              private commentHttpService: CommentHttpService,
+              private commentCommunicationServiceService: CommentCommunicationServiceService,
+              private cardUserHttpService: CardUserHttpService,
+              private cardUserCommunicationService: CardUserCommunicationService,
+              private labelCommunicationService: LabelCommunicationService,
+              private cardLabelHttpService: CardLabelHttpService) {}
 
   ngOnInit(): void {
     this.initializeForms();
@@ -36,7 +65,23 @@ export class CardContentComponent implements OnInit {
     this.cardCommunicationService.currentCard.subscribe((card: ICard): void => {
       this.card = card;
       this.setFormValues();
+      this.GetComments();
+      this.GetCardUsers();
+      this.GetLabels();
     });
+
+    this.commentCommunicationServiceService.refreshComments$.subscribe(() => {
+      this.GetComments()
+    });
+
+    this.cardUserCommunicationService.refreshCardUsers$.subscribe(() => {
+      this.GetCardUsers()
+    });
+
+    this.labelCommunicationService.refreshLabels$.subscribe(() => {
+      this.GetLabels()
+    });
+
   }
 
   initializeForms(): void {
@@ -129,6 +174,60 @@ export class CardContentComponent implements OnInit {
       );
     } else {
       this.alertService.ErrorMessage('Internal error in the application. Try again later.');
+    }
+  }
+
+  OpenPostComment(): void {
+    const form: HTMLElement = document.querySelector('#form-post-comment') as HTMLElement;
+    form.style.display = 'flex';
+  }
+
+  GetComments(): void {
+    if (this.card){
+      this.commentHttpService.GetComments(this.card.id).subscribe(
+        (response: IComment[]): void => {
+          this.comments = response;
+        },
+        (error: Error): void => {
+          this.alertService.ErrorMessage("adsd")
+        }
+      )
+    }
+  }
+
+  OpenPostCardUsers(): void {
+    const form: HTMLElement = document.querySelector('#form-post-card-user') as HTMLElement;
+    form.style.display = 'flex';
+  }
+
+  GetCardUsers(): void {
+    if (this.card){
+      this.cardUserHttpService.GetCardUser(this.card.id).subscribe(
+        (response: IUser[]): void => {
+          this.users = response;
+        },
+        (error: Error): void => {
+          this.alertService.ErrorMessage("adsd")
+        }
+      )
+    }
+  }
+
+  OpenPostLabel(): void {
+    const form: HTMLElement = document.querySelector('#form-post-label') as HTMLElement;
+    form.style.display = 'flex';
+  }
+
+  GetLabels(): void {
+    if (this.card){
+      this.cardLabelHttpService.GetCardLabel(this.card.id).subscribe(
+        (response: ILabel[]): void => {
+          this.labels = response;
+        },
+        (error: Error): void => {
+          this.alertService.ErrorMessage("adsd")
+        }
+      )
     }
   }
 }

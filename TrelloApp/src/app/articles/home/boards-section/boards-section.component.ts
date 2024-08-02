@@ -8,9 +8,9 @@ import {BoardHttpService} from "../../../core/services/http/board-http.service";
 import {UserService} from "../../../core/services/user/user.service";
 import {Router} from "@angular/router";
 import {AlertService} from "../../../core/services/alert/alert.service";
-import {FormPostBoardComponent} from "./forms/form-post-board/form-post-board.component";
-import {FormDeleteBoardComponent} from "./forms/form-delete-board/form-delete-board.component";
-import {FormUpdateBoardComponent} from "./forms/form-update-board/form-update-board.component";
+import {FormPostBoardComponent} from "../../../shared/components/forms/form-post-board/form-post-board.component";
+import {FormDeleteBoardComponent} from "../../../shared/components/forms/form-delete-board/form-delete-board.component";
+import {FormUpdateBoardComponent} from "../../../shared/components/forms/form-update-board/form-update-board.component";
 
 @Component({
   selector: 'app-boards-section',
