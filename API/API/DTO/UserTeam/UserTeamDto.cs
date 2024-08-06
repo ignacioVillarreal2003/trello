@@ -8,6 +8,6 @@ public class UserTeamDto
     [EmailAddress]
     public string UserEmail { get; set; }
     
-    [Required]
+    [StringLength(50)]
     public string TeamName { get; set; }
 }

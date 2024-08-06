@@ -121,7 +121,9 @@ export class BoardComponent {
   }
 
   OpenPostList(): void {
-    const listForm: HTMLElement = document.querySelector('.post-list') as HTMLElement;
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
+    const listForm: HTMLElement = document.querySelector('#form-post-list') as HTMLElement;
     listForm.style.display = 'flex';
   }
 }

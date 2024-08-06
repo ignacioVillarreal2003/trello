@@ -87,7 +87,7 @@ form {
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 10px;
+  gap: 50px;
 }
 
 .date p {
@@ -124,100 +124,146 @@ form {
   background: red;
 }
 
-.comments {
-  width: 90%;
-  height: 150px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.comments button {
+#more-data-card {
   width: 100%;
-  height: 30px;
-  font-size: 16px;
-  border: none;
-  background-color: #0d6efd;
-  color: #fff;
-}
-
-.comments ul {
-  margin: 0;
-  width: 100%;
-  height: 120px;
-  overflow-y: auto;
-}
-
-.comments p {
-  font-size: 16px;
-  padding: 5px;
-  margin: 0;
-}
-
-.usuarios {
-  width: 90%;
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.usuarios button {
-  width: 100%;
-  height: 30px;
-  font-size: 16px;
-  border: none;
-  background-color: #0d6efd;
-  color: #fff;
-}
-
-.usuarios ul {
-  width: 100%;
-  height: 70px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: start;
-  gap: 20px;
-  margin: 0;
-  padding: 5px;
-  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  flex-direction: column;
 }
 
-.usuarios p {
-  font-size: 16px;
-  margin: 0;
-}
-
-.label {
-  width: 90%;
-  height: 90px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.label button {
+#options-more-data-card {
+  display: flex;
   width: 100%;
-  height: 30px;
-  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+#options-more-data-card button {
+  width: 100%;
+  height: 100%;
+  text-align: center;
   border: none;
-  background-color: #0d6efd;
-  color: #fff;
 }
 
-.label ul {
-  width: 100%;
-  height: 60px;
+#options-more-data-card button:hover {
+  background-color: red;
+}
+
+#options-more-data-card button[data-selected="true"] {
+  background-color: #E9F2FF;
+}
+
+.content-more-data-card {
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 5px;
-  margin: 0;
-  padding: 5px;
-  overflow-x: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  flex-direction: column;
 }
 
-.label p {
+#users-card, #label-card {
+  display: none;
+}
+
+.post-data-card {
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.content-more-data-card ul {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.content-more-data-card li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.content-more-data-card li:hover {
+  background-color: #ffffff;
+}
+
+#content-comment, #content-user, #content-label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-comment .comment-description {
+  width: 75%;
+  justify-content: start;
+}
+
+#content-comment p {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
   margin: 0;
-  background-color: #198754;
-  padding: 5px;
-  white-space: nowrap;
+}
+
+#content-comment input {
+  margin: 0;
+  font-size: 18px;
+  width: 100%;
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+
+#content-comment input:focus, #content-comment input:focus-visible {
+  color: black;
+  background-color: #ffffff !important;
+  border: 2px solid #388bff !important;
+  outline: 0 !important;
+}
+
+#content-comment input:hover {
+  background-color: hsla(0, 0%, 0%, 0.16);
+}
+
+.content-more-data-card p {
+  width: 100%;
+  font-size: 16px;
+  margin: 0;
+}
+
+.comment-operations {
+  display: flex;
+  gap: 10px;
+}
+
+.update-data-card {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: orange;
+  border: none;
+}
+
+.delete-data-card {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+  border: none;
 }
 
 .form {

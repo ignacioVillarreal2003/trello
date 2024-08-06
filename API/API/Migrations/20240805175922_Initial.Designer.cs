@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240729171301_V3.0")]
-    partial class V30
+    [Migration("20240805175922_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,10 @@ namespace API.Migrations
                     b.Property<string>("TeamName")
                         .IsRequired()
                         .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Theme")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -92,7 +96,7 @@ namespace API.Migrations
                         .HasColumnType("character varying(50)");
 
                     b.Property<string>("Color")
-                        .HasColumnType("character varying(8)");
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("CardId", "LabelTitle", "Color");
 
@@ -149,8 +153,8 @@ namespace API.Migrations
                         .HasColumnType("character varying(50)");
 
                     b.Property<string>("Color")
-                        .HasMaxLength(8)
-                        .HasColumnType("character varying(8)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("LabelTitle", "Color");
 
@@ -186,22 +190,11 @@ namespace API.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<string>("OwnerEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TeamPassword")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
                     b.Property<string>("Theme")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("TeamName");
-
-                    b.HasIndex("OwnerEmail");
 
                     b.ToTable("Teams");
                 });
@@ -213,8 +206,8 @@ namespace API.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -321,17 +314,6 @@ namespace API.Migrations
                         .IsRequired();
 
                     b.Navigation("Board");
-                });
-
-            modelBuilder.Entity("API.Models.Team", b =>
-                {
-                    b.HasOne("API.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("OwnerEmail")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("API.Models.UserTeam", b =>

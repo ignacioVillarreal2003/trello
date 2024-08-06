@@ -34,8 +34,11 @@ public class TeamService
         {
             return false;
         }
-        
-        t.Theme = team.Theme;
+
+        if (team.Theme.Length > 0)
+        {
+            t.Theme = team.Theme;
+        }
 
         return await _teamRepository.UpdateTeamAsync(t);
     }

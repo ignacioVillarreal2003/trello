@@ -62,30 +62,40 @@ export class TeamsSectionComponent {
   }
 
   OpenPostTeamForm(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-post-team') as HTMLElement;
     this.teamCommunicationService.changeTeam(this.teams);
     form.style.display = "flex";
   }
 
   OpenUpdateTeamForm(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-update-team') as HTMLElement;
     form.style.display = "flex";
     this.teamCommunicationService.changeTeam(this.teams);
   }
 
   OpenDeleteTeamForm(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-delete-team') as HTMLElement;
     form.style.display = "flex";
     this.teamCommunicationService.changeTeam(this.teams);
   }
 
   OpenAddFriendForm(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-add-friend') as HTMLElement;
     form.style.display = "flex";
     this.teamCommunicationService.changeTeam(this.teams);
   }
 
   OpenRemoveFriendForm(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-remove-friend') as HTMLElement;
     form.style.display = "flex";
     this.teamCommunicationService.changeTeam(this.teams);

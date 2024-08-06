@@ -13,6 +13,6 @@ public class UserDto
     public string Username { get; set; }
     
     [Required]
-    [StringLength(200, MinimumLength = 8)]
+    [StringLength(255, MinimumLength = 8)]
     public string Password { get; set; }
 }

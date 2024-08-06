@@ -24,20 +24,20 @@ public class UserController : ControllerBase
     [Authorize]
     public async Task<ActionResult<User>> GetUser(string email)
     {
-        var user = await _userService.GetUserByEmailAsync(email);
+        User user = await _userService.GetUserByEmailAsync(email);
         if (user == null)
         {
             return NotFound();
         }
 
         return Ok(new { user });
-    } // FUNCIONA
+    }
 
     [HttpGet]
     [Authorize]
     public async Task<ActionResult<List<User>>> GetUsers()
     {
-        var users = _userService.GetUsersAsync();
+        List<User> users = await _userService.GetUsersAsync();
         
         if (users == null)
         {
@@ -45,57 +45,57 @@ public class UserController : ControllerBase
         }
 
         return Ok(new { users });
-    } // FUNCIONA
+    }
 
     [HttpDelete("{email}")]
     [Authorize]
     public async Task<IActionResult> DeleteUser(string email)
     {
-        var result = await _userService.DeleteUserAsync(email);
+        bool result = await _userService.DeleteUserAsync(email);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 
     [HttpPut("{email}")]
     [Authorize] 
     public async Task<IActionResult> UpdateUser(string email, UpdateUserDto user)
     {
-        var result = await _userService.UpdateUserAsync(email, user);
+        bool result = await _userService.UpdateUserAsync(email, user);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
     
     [HttpPost("register")]
     public async Task<ActionResult<string>> RegisterUser(UserDto user)
     {
-        var result = await _userService.RegisterUserAsync(user);
+        bool result = await _userService.RegisterUserAsync(user);
         if (!result)
         {
             return BadRequest();
         }
 
-        var token = _jwt.GenerarToken(user.Email);
+        string token = _jwt.GenerarToken(user.Email);
         return Ok(new { token });
-    } // FUNCIONA
+    }
     
     [HttpPost("login")]
     public async Task<ActionResult<string>> LoginUser(LoginUserDto user)
     {
-        var result = await _userService.LoginUserAsync(user);
+        bool result = await _userService.LoginUserAsync(user);
         if (!result)
         {
             return BadRequest();
         }
 
-        var token = _jwt.GenerarToken(user.Email);
+        string token = _jwt.GenerarToken(user.Email);
         return Ok(new { token });
-    } // FUNCIONA
+    }
 }

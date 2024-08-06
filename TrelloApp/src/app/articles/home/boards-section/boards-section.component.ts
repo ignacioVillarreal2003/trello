@@ -62,17 +62,23 @@ export class BoardsSectionComponent {
   }
 
   OpenPostBoardForm(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-post-board') as HTMLElement;
     form.style.display = "flex";
   }
 
   OpenUpdateBoardForm(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-update-board') as HTMLElement;
     form.style.display = "flex";
     this.boardCommunicationService.changeBoards(this.boards);
   }
 
   OpenDeleteBoardForm(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-delete-board') as HTMLElement;
     form.style.display = "flex";
     this.boardCommunicationService.changeBoards(this.boards);

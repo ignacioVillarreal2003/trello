@@ -23,6 +23,7 @@ import {ILabel} from "../../../../../core/models/label.model";
 import {LabelCommunicationService} from "../../../../../core/services/communication/label-communication.service";
 import {FormPostLabelComponent} from "../../../../../shared/components/forms/form-post-label/form-post-label.component";
 import {CardLabelHttpService} from "../../../../../core/services/http/card-label-http.service";
+import {Option} from "@angular/cli/src/command-builder/utilities/json-schema";
 
 @Component({
   selector: 'app-card-content',
@@ -44,6 +45,7 @@ export class CardContentComponent implements OnInit {
   comments: IComment[] = [];
   users: IUser[] = [];
   labels: ILabel[] = []
+  idComment: number = 0;
 
   formUpdateTitleCard: FormGroup | undefined = undefined;
   formUpdateEndCard: FormGroup | undefined = undefined;
@@ -178,6 +180,8 @@ export class CardContentComponent implements OnInit {
   }
 
   OpenPostComment(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-post-comment') as HTMLElement;
     form.style.display = 'flex';
   }
@@ -196,6 +200,8 @@ export class CardContentComponent implements OnInit {
   }
 
   OpenPostCardUsers(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-post-card-user') as HTMLElement;
     form.style.display = 'flex';
   }
@@ -214,6 +220,8 @@ export class CardContentComponent implements OnInit {
   }
 
   OpenPostLabel(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "flex";
     const form: HTMLElement = document.querySelector('#form-post-label') as HTMLElement;
     form.style.display = 'flex';
   }
@@ -229,5 +237,99 @@ export class CardContentComponent implements OnInit {
         }
       )
     }
+  }
+
+  SelectOption(event: Event) {
+    const target: HTMLElement = event.target as HTMLElement;
+    const buttons: NodeListOf<HTMLElement> = document.querySelectorAll(".options button") as NodeListOf<HTMLElement>;
+    buttons.forEach(btn => btn.setAttribute('data-selected', 'false'));
+    target.setAttribute('data-selected', 'true');
+  }
+
+  ChangeOptionMoreDataCard(n: number, event: Event): void  {
+    const target: HTMLElement = event.target as HTMLElement;
+    const options: NodeListOf<HTMLElement> = document.querySelectorAll('#options-more-data-card button') as NodeListOf<HTMLElement>;
+    const commentSection: HTMLElement = document.querySelector('#comments-card') as HTMLElement;
+    const usersSection: HTMLElement = document.querySelector('#users-card') as HTMLElement;
+    const labelSection: HTMLElement = document.querySelector('#label-card') as HTMLElement;
+    options.forEach((option: HTMLElement) => option.setAttribute('data-selected', 'false'));
+    target.setAttribute('data-selected', 'true');
+    if (n == 0){
+      commentSection.style.display = 'flex';
+      usersSection.style.display = 'none';
+      labelSection.style.display = 'none';
+    } else if (n == 1){
+      commentSection.style.display = 'none';
+      usersSection.style.display = 'flex';
+      labelSection.style.display = 'none';
+    } else if (n == 2){
+      commentSection.style.display = 'none';
+      usersSection.style.display = 'none';
+      labelSection.style.display = 'flex';
+    }
+  }
+
+  DeleteComment(comment: IComment): void {
+    if (this.card){
+      this.commentHttpService.DeleteComment(comment.id).subscribe(
+        (response: any): void => {
+          this.alertService.SuccessMessage('Deleted comment success.');
+          this.commentCommunicationServiceService.triggerRefreshComments();
+        },
+        (error: Error): void => {
+          this.alertService.ErrorMessage('Deleted comment error.');
+        }
+      )
+    }
+  }
+
+  DeleteUser(user: IUser): void {
+    if (this.card) {
+      this.cardUserHttpService.DeleteCardUser(this.card.id, user.email).subscribe(
+        (response: any): void => {
+          this.alertService.SuccessMessage('Deleted user success.');
+          this.cardUserCommunicationService.triggerRefreshCardUsers();
+        },
+        (error: Error): void => {
+          this.alertService.ErrorMessage('Deleted user error.');
+        }
+      )
+    }
+  }
+
+  DeleteLabel(label: ILabel): void {
+    if (this.card) {
+      this.cardLabelHttpService.DeleteComment(this.card.id, label.labelTitle, label.color).subscribe(
+        (response: any): void => {
+          this.alertService.SuccessMessage('Deleted label success.');
+          this.labelCommunicationService.triggerRefreshLabels();
+        },
+        (error: Error): void => {
+          this.alertService.ErrorMessage('Deleted label error.');
+        }
+      )
+    }
+  }
+
+  formUpdateCommentDescription: FormGroup = new FormGroup({
+    newCommentDescription: new FormControl('', [Validators.required])
+  });
+
+  UpdateCommentDescription(commentDescription: string): void {
+    if (this.card) {
+      this.commentHttpService.UpdateBoard(this.idComment, commentDescription, new Date()).subscribe(
+        (response: any): void => {
+          this.alertService.SuccessMessage('Updated comment success.');
+          this.commentCommunicationServiceService.triggerRefreshComments();
+        },
+        (error: Error): void => {
+          this.alertService.ErrorMessage('Updated comment error.');
+        }
+      )
+    }
+  }
+
+  ChangeIdComment(n: number): void {
+    this.idComment = n;
   }
 }

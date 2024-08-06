@@ -77,7 +77,9 @@ export class FormPostLabelComponent {
     }
   }
 
-  CloseWindow(){
+  CloseWindow(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "none";
     const window: HTMLElement = document.querySelector('#form-post-label') as HTMLElement;
     window.style.display = 'none';
   }

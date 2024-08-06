@@ -43,9 +43,20 @@ public class CardService
             return false;
         }
 
-        c.Description = card.Description;
-        c.End = card.End;
-        c.CardTitle = card.CardTitle;
+        if (card.CardTitle.Length > 0)
+        {
+            c.CardTitle = card.CardTitle;
+        }
+        
+        if (card.Description.Length > 0)
+        {
+            c.Description = card.Description;
+        }
+        
+        if (card.End != null)
+        {
+            c.End = card.End;
+        }
         
         return await _cardRepository.UpdateCardAsync(c);
     }

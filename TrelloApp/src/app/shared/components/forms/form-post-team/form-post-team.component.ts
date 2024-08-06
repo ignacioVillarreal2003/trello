@@ -60,7 +60,9 @@ export class FormPostTeamComponent {
     );
   }
 
-  CloseWindow(){
+  CloseWindow(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "none";
     const window: HTMLElement = document.querySelector('#form-post-team') as HTMLElement;
     window.style.display = 'none';
   }

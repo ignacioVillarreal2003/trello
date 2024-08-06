@@ -9,6 +9,6 @@ public class LabelDto
     public string LabelTitle { get; set; }
     
     [Required]
-    [StringLength(8), MinLength(8)]
+    [StringLength(50)]
     public string Color { get; set; }
 }

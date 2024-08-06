@@ -24,16 +24,21 @@ public class CardUserController : ControllerBase
     [Authorize]
     public async Task<ActionResult<List<User>>> GetCardUser(long cardId)
     {
-        var result = await _cardUserService.GetCardUserAsync(cardId);
-       
-        return result;
+        List<User> users = await _cardUserService.GetCardUserAsync(cardId);
+        
+        if (users == null)
+        {
+            return NotFound();
+        }
+        
+        return users;
     }
     
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<bool>> AddCardUser(CardUserDto cardUser)
     {
-        var result = await _cardUserService.AddCardUserAsync(cardUser);
+        bool result = await _cardUserService.AddCardUserAsync(cardUser);
         if (!result)
         {
             return NotFound();
@@ -46,7 +51,7 @@ public class CardUserController : ControllerBase
     [Authorize]
     public async Task<ActionResult<bool>> DeleteCardUser(long cardId, string userEmail)
     {
-        var result = await _cardUserService.DeleteCardUserAsync(cardId, userEmail);
+        bool result = await _cardUserService.DeleteCardUserAsync(cardId, userEmail);
         if (!result)
         {
             return NotFound();

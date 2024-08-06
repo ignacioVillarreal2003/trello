@@ -16,7 +16,7 @@ public class BoardService
     public async Task<List<Board>> GetBoardsAsync(string teamName) 
     {
         return await _boardRepository.GetBoardsByTeamIdAsync(teamName);
-    } // FUNCIONA
+    }
     
     public async Task<bool> AddBoardAsync(BoardDto board)
     {

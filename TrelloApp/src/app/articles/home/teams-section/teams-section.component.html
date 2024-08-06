@@ -18,9 +18,3 @@
     <li *ngFor="let team of teams"><app-basic-pre-view-card (click)="OpenBoards(team.teamName)" size="large" color="{{team.theme}}" text="{{team.teamName}}"></app-basic-pre-view-card></li>
   </ul>
 </div>
-
-<app-form-post-team class="form" id="form-post-team"></app-form-post-team>
-<app-form-update-team class="form" id="form-update-team"></app-form-update-team>
-<app-form-delete-team class="form" id="form-delete-team"></app-form-delete-team>
-<app-form-add-friend class="form" id="form-add-friend"></app-form-add-friend>
-<app-form-remove-friend class="form" id="form-remove-friend"></app-form-remove-friend>

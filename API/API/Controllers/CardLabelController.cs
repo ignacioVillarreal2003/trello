@@ -24,16 +24,21 @@ public class CardLabelController : ControllerBase
     [Authorize]
     public async Task<ActionResult<List<ApiLabel>>> GetCardLabel(long cardId)
     {
-        var labels = await _cardLabelService.GetCardLabelAsync(cardId);
+        List<ApiLabel> labels = await _cardLabelService.GetCardLabelAsync(cardId);
 
-        return Ok( new {labels} );
+        if (labels == null)
+        {
+            return NotFound();
+        }
+        
+        return Ok( new { labels } );
     }
     
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<bool>> AddCardLabel(CardLabelDto cardLabel)
     {
-        var result = await _cardLabelService.AddCardLabelAsync(cardLabel);
+        bool result = await _cardLabelService.AddCardLabelAsync(cardLabel);
         if (!result)
         {
             return NotFound();
@@ -46,7 +51,7 @@ public class CardLabelController : ControllerBase
     [Authorize]
     public async Task<ActionResult<bool>> DeleteCardLabel(long cardId, string labelTitle, string color)
     {
-        var result = await _cardLabelService.DeleteCardLabelAsync(cardId, labelTitle, color);
+        bool result = await _cardLabelService.DeleteCardLabelAsync(cardId, labelTitle, color);
         if (!result)
         {
             return NotFound();

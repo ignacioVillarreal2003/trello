@@ -22,43 +22,53 @@ public class UserTeamController : ControllerBase
     [Authorize]
     public async Task<ActionResult<List<Team>>> GetUserTeamsByUser(string userEmail)
     {
-        var teams = await _userTeamService.GetUserTeamsByUserAsync(userEmail);
+        List<Team> teams = await _userTeamService.GetUserTeamsByUserAsync(userEmail);
+        
+        if (teams == null)
+        {
+            return NotFound();
+        }
         
         return Ok(new { teams });
-    } // FUNCIONA
+    }
     
     [HttpGet("team/{teamName}")]
     [Authorize]
     public async Task<ActionResult<List<User>>> GetUserTeamsByTeam(string teamName)
     {
-        var users = await _userTeamService.GetUserTeamsByTeamAsync(teamName);
+        List<User> users = await _userTeamService.GetUserTeamsByTeamAsync(teamName);
+
+        if (users == null)
+        {
+            return NotFound();
+        }
         
         return Ok(new { users });
-    } // FUNCIONA
+    }
     
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<bool>> AddUserTeam(UserTeamDto userTeam)
     {
-        var result = await _userTeamService.AddUserTeamAsync(userTeam);
+        bool result = await _userTeamService.AddUserTeamAsync(userTeam);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
     
     [HttpDelete("{teamName}-{userEmail}")]
     [Authorize]
     public async Task<ActionResult<bool>> DeleteUserTeam(string teamName, string userEmail)
     {
-        var result = await _userTeamService.DeleteUserTeamAsync(teamName, userEmail);
+        bool result = await _userTeamService.DeleteUserTeamAsync(teamName, userEmail);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 }

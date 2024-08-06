@@ -21,7 +21,7 @@ public class CommentController : ControllerBase
     [Authorize]
     public async Task<ActionResult<List<Comment>>> GetComment(long id)
     {
-        var comments = await _commentService.GetCommentAsync(id);
+        List<Comment> comments = await _commentService.GetCommentAsync(id);
         if (comments == null)
         {
             return NotFound();
@@ -34,7 +34,7 @@ public class CommentController : ControllerBase
     [Authorize]
     public async Task<ActionResult<bool>> AddComment(CommentDto comment)
     {
-        var result = await _commentService.AddCommentAsync(comment);
+        bool result = await _commentService.AddCommentAsync(comment);
         if (!result)
         {
             return NotFound();
@@ -47,7 +47,7 @@ public class CommentController : ControllerBase
     [Authorize]
     public async Task<IActionResult> DeleteComment(long id)
     {
-        var result = await _commentService.DeleteCommentAsync(id);
+        bool result = await _commentService.DeleteCommentAsync(id);
         if (!result)
         {
             return NotFound();
@@ -60,7 +60,7 @@ public class CommentController : ControllerBase
     [Authorize]
     public async Task<IActionResult> UpdateComment(long id, UpdateCommentDto comment)
     {
-        var result = await _commentService.UpdateCommentAsync(id, comment);
+        bool result = await _commentService.UpdateCommentAsync(id, comment);
         if (!result)
         {
             return NotFound();

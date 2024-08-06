@@ -21,52 +21,51 @@ public class CardController : ControllerBase
     [Authorize]
     public async Task<ActionResult<List<Card>>> GetCards(long id)
     {
-        var cards = await _cardService.GetCardsAsync(id);
+        List<Card> cards = await _cardService.GetCardsAsync(id);
         if (cards == null)
         {
             return NotFound();
         }
 
         return Ok(new { cards });
-    } // FUNCIONA
+    }
 
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<bool>> AddCard(CardDto card)
     {
-        var result = await _cardService.AddCardAsync(card);
+        bool result = await _cardService.AddCardAsync(card);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 
     [HttpDelete("{id}")]
     [Authorize]
     public async Task<IActionResult> DeleteCard(long id)
     {
-        var result = await _cardService.DeleteCardAsync(id);
+        bool result = await _cardService.DeleteCardAsync(id);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 
     [HttpPut("{id}")]
     [Authorize]
     public async Task<IActionResult> UpdateCard(long id, UpdateCardDto card)
     {
-        Console.WriteLine(card.CardTitle, card.Description, card.End);
-        var result = await _cardService.UpdateCardAsync(id, card);
+        bool result = await _cardService.UpdateCardAsync(id, card);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 }

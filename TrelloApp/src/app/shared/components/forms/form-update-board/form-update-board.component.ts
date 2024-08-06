@@ -61,7 +61,9 @@ export class FormUpdateBoardComponent {
     }
   }
 
-  CloseWindow(){
+  CloseWindow(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "none";
     const window: HTMLElement = document.querySelector('#form-update-board') as HTMLElement;
     window.style.display = 'none';
   }

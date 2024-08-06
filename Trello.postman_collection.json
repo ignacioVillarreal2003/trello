@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"username\": \"string\",\r\n  \"password\": \"stringst\"\r\n}",
+							"raw": "{\r\n    \"email\": \"useremial@examples.com\",\r\n    \"username\": \"username\",\r\n    \"password\": \"stringstpassword\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,12 +24,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/User/register",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/User/register",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"User",
 								"register"
@@ -45,7 +43,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"stringst\"\r\n}",
+							"raw": "{\r\n  \"email\": \"useremial@examples.com\",\r\n  \"password\": \"stringstpassword\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -53,12 +51,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/User/login",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/User/login",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"User",
 								"login"
@@ -70,28 +66,16 @@
 				{
 					"name": "GetUser",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5MDZ9.jF4OmJ-NUBGj7SQ27RTwwXaKTWY7SC3KOn6kgnWv8Ew",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/User/user@example.com",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/User/useremial@examples.com",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"User",
-								"user@example.com"
+								"useremial@examples.com"
 							]
 						}
 					},
@@ -100,25 +84,13 @@
 				{
 					"name": "GetUsers",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5MDZ9.jF4OmJ-NUBGj7SQ27RTwwXaKTWY7SC3KOn6kgnWv8Ew",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/User",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/User",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"User"
 							]
@@ -127,53 +99,13 @@
 					"response": []
 				},
 				{
-					"name": "DeleteUser",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5MDZ9.jF4OmJ-NUBGj7SQ27RTwwXaKTWY7SC3KOn6kgnWv8Ew",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/User/user@example.com",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"User",
-								"user@example.com"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "UpdateUser",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"string\",\r\n  \"password\": \"stringst\"\r\n}",
+							"raw": "{\r\n  \"username\": \"otherusername\",\r\n  \"password\": \"otherstringstpassword\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -181,15 +113,31 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/User/user@example.com",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/User/useremial@examples.com",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"User",
-								"user@example.com"
+								"useremial@examples.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_URL}}/User/useremial@examples.com",
+							"host": [
+								"{{Base_URL}}"
+							],
+							"path": [
+								"User",
+								"useremial@examples.com"
 							]
 						}
 					},
@@ -201,23 +149,13 @@
 			"name": "Team",
 			"item": [
 				{
-					"name": "PostTeams",
+					"name": "PostTeam",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"teamName\": \"string\",\r\n  \"ownerEmail\": \"user@example.com\",\r\n  \"teamPassword\": \"stringst\"\r\n}",
+							"raw": "{\r\n  \"teamName\": \"teamName1\",\r\n  \"theme\": \"yellow\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -225,103 +163,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Team",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Team",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Team"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetTeams",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Team",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Team"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetTeam",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Team/4",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Team",
-								"4"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteTeam",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Team/1",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Team",
-								"1"
 							]
 						}
 					},
@@ -330,21 +177,11 @@
 				{
 					"name": "UpdateTeam",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"teamName\": \"string\",\r\n  \"ownerEmail\": \"user@example.com\",\r\n  \"teamPassword\": \"stringst\"\r\n}",
+							"raw": "{\r\n  \"theme\": \"orange\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -352,15 +189,31 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Team/4",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Team/teamName1",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Team",
-								"4"
+								"teamName1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTeam",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_URL}}/Team/teamName1",
+							"host": [
+								"{{Base_URL}}"
+							],
+							"path": [
+								"Team",
+								"teamName1"
 							]
 						}
 					},
@@ -374,21 +227,11 @@
 				{
 					"name": "PostUserTeam",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"userEmail\": \"user@example.com\",\r\n  \"teamId\": 0,\r\n  \"teamPassword\": \"stringst\"\r\n}",
+							"raw": "{\r\n  \"userEmail\": \"alice@example.com\",\r\n  \"teamName\": \"Team Iota\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -396,12 +239,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/UserTeam",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/UserTeam",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"UserTeam"
 							]
@@ -410,38 +251,56 @@
 					"response": []
 				},
 				{
+					"name": "GetUserTeamByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_URL}}/UserTeam/user/carol@example.com",
+							"host": [
+								"{{Base_URL}}"
+							],
+							"path": [
+								"UserTeam",
+								"user",
+								"carol@example.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserTeamByTeam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_URL}}/UserTeam/team/Team Kappa",
+							"host": [
+								"{{Base_URL}}"
+							],
+							"path": [
+								"UserTeam",
+								"team",
+								"Team Kappa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "DeleteUserTeam",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"userEmail\": \"user@example.com\",\r\n  \"teamId\": 0\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "https://localhost:44367/UserTeam",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/UserTeam/Team Iota-alice@example.com",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
-								"UserTeam"
+								"UserTeam",
+								"Team Iota-alice@example.com"
 							]
 						}
 					},
@@ -455,21 +314,11 @@
 				{
 					"name": "PostBoard",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"boardTitle\": \"string\",\r\n  \"teamId\": 5\r\n}",
+							"raw": "{\r\n  \"boardTitle\": \"Project board 1\",\r\n  \"theme\": \"yellow\",\r\n  \"teamName\": \"Team Eta\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -477,12 +326,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Board",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Board",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Board"
 							]
@@ -491,90 +338,18 @@
 					"response": []
 				},
 				{
-					"name": "GetBoardById",
+					"name": "GetBoardByTeamName",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/Board/2",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Board/Team Eta",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Board",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetBoardByTeamId",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Board/team/5",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Board",
-								"team",
-								"5"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetBoards",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Board",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Board"
+								"Team Eta"
 							]
 						}
 					},
@@ -583,25 +358,13 @@
 				{
 					"name": "DeleteBoard",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/Board/1",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Board/1",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Board",
 								"1"
@@ -613,21 +376,11 @@
 				{
 					"name": "UpdateBoard",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3MjEzMTk5OTJ9.530dLSm6gx-5bVP4ZiqjF2cHpVk4BLS77TQRPKSvtAk",
-									"type": "string"
-								}
-							]
-						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"boardTitle\": \"string\"\r\n}",
+							"raw": "{\r\n  \"boardTitle\": \"boardTitle2\",\r\n  \"theme\": \"orange\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -635,12 +388,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Board/2",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Board/2",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Board",
 								"2"
@@ -657,21 +408,11 @@
 				{
 					"name": "PostList",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"listTitle\": \"string\",\r\n  \"boardId\": 2\r\n}",
+							"raw": "{\r\n  \"listTitle\": \"listTitle1\",\r\n  \"boardId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -679,44 +420,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/List",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/List",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"List"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetListById",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/List/1",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"List",
-								"1"
 							]
 						}
 					},
@@ -725,58 +434,16 @@
 				{
 					"name": "GetListsByBoardId",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/List/board/2",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/List/2",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"List",
-								"board",
 								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetLists",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/List",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"List"
 							]
 						}
 					},
@@ -785,28 +452,16 @@
 				{
 					"name": "DeleteList",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/List/1",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/List/10",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"List",
-								"1"
+								"10"
 							]
 						}
 					},
@@ -815,21 +470,11 @@
 				{
 					"name": "UpdateList",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"listTitle\": \"string\"\r\n}",
+							"raw": "{\r\n  \"listTitle\": \"listTitle2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -837,15 +482,13 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/List/2",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/List/4",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"List",
-								"2"
+								"4"
 							]
 						}
 					},
@@ -859,21 +502,11 @@
 				{
 					"name": "PostCard",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"cardTitle\": \"string\",\r\n  \"listId\": 2,\r\n  \"start\": \"2024-07-18T16:49:52.215Z\",\r\n  \"end\": \"2024-07-18T16:49:52.215Z\",\r\n  \"description\": \"string\"\r\n}",
+							"raw": "{\r\n  \"cardTitle\": \"string\",\r\n  \"listId\": 4,\r\n  \"start\": \"2024-07-18T16:49:52.215Z\",\r\n  \"end\": \"2024-07-18T16:49:52.215Z\",\r\n  \"description\": \"string\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -881,44 +514,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Card",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Card",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Card"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetCardById",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Card/5",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Card",
-								"5"
 							]
 						}
 					},
@@ -927,58 +528,16 @@
 				{
 					"name": "GetCardByListId",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/Card/list/2",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Card/4",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Card",
-								"list",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetCards",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Card",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Card"
+								"4"
 							]
 						}
 					},
@@ -987,28 +546,16 @@
 				{
 					"name": "DeleteCard",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/Card/5",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Card/2",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Card",
-								"5"
+								"2"
 							]
 						}
 					},
@@ -1017,21 +564,11 @@
 				{
 					"name": "UpdateCard",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"cardTitle\": \"string1\",\r\n  \"end\": \"2024-07-18T16:53:46.577Z\",\r\n  \"description\": \"string\"\r\n}",
+							"raw": "{\r\n  \"cardTitle\": \"cardTitle1\",\r\n  \"end\": \"2024-07-18T16:53:46.577Z\",\r\n  \"description\": \"longdescription-longdescription-longdescription\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1039,15 +576,13 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Card/6",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Card/3",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Card",
-								"6"
+								"3"
 							]
 						}
 					},
@@ -1061,21 +596,11 @@
 				{
 					"name": "PostComment",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"commentDescription\": \"string\",\r\n  \"cardId\": 6,\r\n  \"commentDate\": \"2024-07-18T17:35:36.362Z\"\r\n}",
+							"raw": "{\r\n  \"commentDescription\": \"commentDescription\",\r\n  \"cardId\": 3,\r\n  \"commentDate\": \"2024-07-18T17:35:36.362Z\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1083,44 +608,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Comment",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Comment",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Comment"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetCommentById",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Comment/2",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Comment",
-								"2"
 							]
 						}
 					},
@@ -1129,58 +622,16 @@
 				{
 					"name": "GetCommentByCardId",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/Comment/card/6",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Comment/3",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Comment",
-								"card",
-								"6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetComments",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Comment",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Comment"
+								"3"
 							]
 						}
 					},
@@ -1189,28 +640,16 @@
 				{
 					"name": "DeleteComment",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/Comment/2",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Comment/6",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Comment",
-								"2"
+								"6"
 							]
 						}
 					},
@@ -1219,21 +658,11 @@
 				{
 					"name": "UpdateComment",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI0NDk2fQ.aDYfRr5s-savecbq5KUsELpO60uWidhU9hwL1KNBSfU",
-									"type": "string"
-								}
-							]
-						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"commentDescription\": \"string\",\r\n  \"commentDate\": \"2024-07-18T17:37:59.356Z\"\r\n}",
+							"raw": "{\r\n  \"commentDescription\": \"otherCommentDescription\",\r\n  \"commentDate\": \"2025-07-18T17:37:59.356Z\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1241,15 +670,13 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Comment/3",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Comment/5",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Comment",
-								"3"
+								"5"
 							]
 						}
 					},
@@ -1263,21 +690,11 @@
 				{
 					"name": "PostLabel",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"labelTitle\": \"string\",\r\n  \"color\": \"stringst\"\r\n}",
+							"raw": "{\r\n  \"labelTitle\": \"labelTitle1\",\r\n  \"color\": \"yellow\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1285,12 +702,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/Label",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Label",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Label"
 							]
@@ -1299,57 +714,15 @@
 					"response": []
 				},
 				{
-					"name": "GetLabel",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44367/Label/string-stringst",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44367",
-							"path": [
-								"Label",
-								"string-stringst"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "GetLabels",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/Label",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Label",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Label"
 							]
@@ -1360,28 +733,16 @@
 				{
 					"name": "DeleteLabel",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44367/Label/string-stringst",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/Label/labelTitle1-yellow",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"Label",
-								"string-stringst"
+								"labelTitle1-yellow"
 							]
 						}
 					},
@@ -1395,21 +756,11 @@
 				{
 					"name": "PostCardLabel",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"cardId\": 6,\r\n  \"labelTitle\": \"string\",\r\n  \"color\": \"stringst\"\r\n}",
+							"raw": "{\r\n  \"cardId\": 5,\r\n  \"labelTitle\": \"Urgent\",\r\n  \"color\": \"Red\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1417,12 +768,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/CardLabel",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/CardLabel",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"CardLabel"
 							]
@@ -1431,38 +780,36 @@
 					"response": []
 				},
 				{
+					"name": "GetCardLabelByCardId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_URL}}/CardLabel/3",
+							"host": [
+								"{{Base_URL}}"
+							],
+							"path": [
+								"CardLabel",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "DeleteCardLabel",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"cardId\": 6,\r\n  \"labelTitle\": \"string\",\r\n  \"color\": \"stringst\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "https://localhost:44367/CardLabel",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/CardLabel/2-Design-Blue",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
-								"CardLabel"
+								"CardLabel",
+								"2-Design-Blue"
 							]
 						}
 					},
@@ -1476,21 +823,11 @@
 				{
 					"name": "PostCardUser",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"cardId\": 6,\r\n  \"userEmail\": \"user@example.com\"\r\n}",
+							"raw": "{\r\n  \"cardId\": 3,\r\n  \"userEmail\": \"judy@example.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1498,12 +835,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/CardUser",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/CardUser",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
 								"CardUser"
 							]
@@ -1512,23 +847,31 @@
 					"response": []
 				},
 				{
+					"name": "GetCardUserByCardId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_URL}}/CardUser/3",
+							"host": [
+								"{{Base_URL}}"
+							],
+							"path": [
+								"CardUser",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "DeleteCardUser",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzIxMzI4Njg2fQ.6YMUe_aDhrriIbBd-2f4ozJVnAe-Yh5HKoibnl7RFd0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"cardId\": 6,\r\n  \"userEmail\": \"user@example.com\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1536,20 +879,64 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44367/CardUser",
-							"protocol": "https",
+							"raw": "{{Base_URL}}/CardUser/3-judy@example.com",
 							"host": [
-								"localhost"
+								"{{Base_URL}}"
 							],
-							"port": "44367",
 							"path": [
-								"CardUser"
+								"CardUser",
+								"3-judy@example.com"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJlbWlhbEBleGFtcGxlcy5jb20iLCJleHAiOjE3MjI4ODcyOTF9.c8xYmBF82N1kPARozeVu6L0nkzpkNylLIqeUEcUdyaw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});\r",
+					"\r",
+					"pm.test(\"Response time is less than 200ms\", function () {\r",
+					"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Base_URL",
+			"value": "https://localhost:44367",
+			"type": "string"
 		}
 	]
 }

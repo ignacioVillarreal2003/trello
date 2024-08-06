@@ -24,7 +24,6 @@ public class UserTeamService
     {
         return await _userTeamRepository.GetUserTeamsByTeamAsync(teamName);
     }
-
     
     public async Task<bool> AddUserTeamAsync(UserTeamDto userTeam)
     {

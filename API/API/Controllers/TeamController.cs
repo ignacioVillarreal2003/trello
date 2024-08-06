@@ -19,9 +19,9 @@ public class TeamController : ControllerBase
 
     [HttpPost]
     [Authorize]
-    public async Task<ActionResult<bool>> AddTeam(TeamDto team) // FUNCIONA
+    public async Task<ActionResult<bool>> AddTeam(TeamDto team)
     {
-        var result = await _teamService.AddTeamAsync(team);
+        bool result = await _teamService.AddTeamAsync(team);
         if (!result)
         {
             return NotFound();
@@ -34,25 +34,25 @@ public class TeamController : ControllerBase
     [Authorize]
     public async Task<IActionResult> DeleteTeam(string teamName)
     {
-        var result = await _teamService.DeleteTeamAsync(teamName);
+        bool result = await _teamService.DeleteTeamAsync(teamName);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } //FUNCIONA
+    }
 
     [HttpPut("{teamName}")]
     [Authorize]
     public async Task<IActionResult> UpdateTeam(string teamName, UpdateTeamDto team)
     {
-        var result = await _teamService.UpdateTeamAsync(teamName, team);
+        bool result = await _teamService.UpdateTeamAsync(teamName, team);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 }

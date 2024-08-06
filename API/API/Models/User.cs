@@ -12,7 +12,7 @@ public class User
     public string Username { get; set; }
 
     [Required]
-    [StringLength(200)]
+    [StringLength(255)]
     public string Password { get; set; }
 
     public ICollection<UserTeam> UserTeams { get; set; }

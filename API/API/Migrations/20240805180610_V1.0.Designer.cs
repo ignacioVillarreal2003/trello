@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240717130520_V1.0")]
+    [Migration("20240805180610_V1.0")]
     partial class V10
     {
         /// <inheritdoc />
@@ -38,12 +38,17 @@ namespace API.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<long>("TeamId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("TeamName")
+                        .IsRequired()
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Theme")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TeamId");
+                    b.HasIndex("TeamName");
 
                     b.ToTable("Boards");
                 });
@@ -91,7 +96,7 @@ namespace API.Migrations
                         .HasColumnType("character varying(50)");
 
                     b.Property<string>("Color")
-                        .HasColumnType("character varying(8)");
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("CardId", "LabelTitle", "Color");
 
@@ -148,8 +153,8 @@ namespace API.Migrations
                         .HasColumnType("character varying(50)");
 
                     b.Property<string>("Color")
-                        .HasMaxLength(8)
-                        .HasColumnType("character varying(8)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("LabelTitle", "Color");
 
@@ -181,29 +186,15 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Models.Team", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("OwnerEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("TeamName")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<string>("TeamPassword")
+                    b.Property<string>("Theme")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasColumnType("text");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("OwnerEmail");
+                    b.HasKey("TeamName");
 
                     b.ToTable("Teams");
                 });
@@ -215,8 +206,8 @@ namespace API.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -233,12 +224,12 @@ namespace API.Migrations
                     b.Property<string>("UserEmail")
                         .HasColumnType("text");
 
-                    b.Property<long>("TeamId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("TeamName")
+                        .HasColumnType("character varying(50)");
 
-                    b.HasKey("UserEmail", "TeamId");
+                    b.HasKey("UserEmail", "TeamName");
 
-                    b.HasIndex("TeamId");
+                    b.HasIndex("TeamName");
 
                     b.ToTable("UserTeams");
                 });
@@ -247,7 +238,7 @@ namespace API.Migrations
                 {
                     b.HasOne("API.Models.Team", "Team")
                         .WithMany("Boards")
-                        .HasForeignKey("TeamId")
+                        .HasForeignKey("TeamName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -325,22 +316,11 @@ namespace API.Migrations
                     b.Navigation("Board");
                 });
 
-            modelBuilder.Entity("API.Models.Team", b =>
-                {
-                    b.HasOne("API.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("OwnerEmail")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("API.Models.UserTeam", b =>
                 {
                     b.HasOne("API.Models.Team", "Team")
                         .WithMany("UserTeams")
-                        .HasForeignKey("TeamId")
+                        .HasForeignKey("TeamName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

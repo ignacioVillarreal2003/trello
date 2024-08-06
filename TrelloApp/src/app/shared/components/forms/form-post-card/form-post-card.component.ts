@@ -62,7 +62,9 @@ export class FormPostCardComponent {
     }
   }
 
-  CloseWindow(){
+  CloseWindow(): void {
+    const base: HTMLElement = document.querySelector('#forms-content') as HTMLElement;
+    base.style.display = "none";
     const window: HTMLElement = document.querySelector('#form-post-card') as HTMLElement;
     window.style.display = 'none';
   }

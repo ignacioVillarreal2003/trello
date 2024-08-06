@@ -33,7 +33,7 @@ export class CardLabelHttpService {
     );
   }
 
-  DeleteComment(cardId: string, labelTitle: string, color: string): Observable<any> {
+  DeleteComment(cardId: number, labelTitle: string, color: string): Observable<any> {
     return this.http.delete<any>(this.baseUrl + `/${cardId}-${labelTitle}-${color}`, this.httpOptions).pipe(
       catchError(this.handleError)
     );

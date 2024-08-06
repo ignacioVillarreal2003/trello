@@ -21,51 +21,52 @@ public class ListController : ControllerBase
     [Authorize]
     public async Task<ActionResult<List<List>>> GetLists(long boardId)
     {
-        var lists = await _listService.GetListsAsync(boardId);
+        List<List> lists = await _listService.GetListsAsync(boardId);
+        
         if (lists == null)
         {
             return NotFound();
         }
 
         return Ok(new { lists });
-    } // FUNCIONA
+    }
 
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<bool>> AddList(ListDto list)
     {
-        var result = await _listService.AddListAsync(list);
+        bool result = await _listService.AddListAsync(list);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 
     [HttpDelete("{id}")]
     [Authorize]
     public async Task<IActionResult> DeleteList(long id)
     {
-        var result = await _listService.DeleteListAsync(id);
+        bool result = await _listService.DeleteListAsync(id);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 
     [HttpPut("{id}")]
     [Authorize]
     public async Task<IActionResult> UpdateList(long id, UpdateListDto list)
     {
-        var result = await _listService.UpdateListAsync(id, list);
+        bool result = await _listService.UpdateListAsync(id, list);
         if (!result)
         {
             return NotFound();
         }
 
         return NoContent();
-    } // FUNCIONA
+    }
 }

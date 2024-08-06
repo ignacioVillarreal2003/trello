@@ -93,7 +93,7 @@ namespace API.Migrations
                         .HasColumnType("character varying(50)");
 
                     b.Property<string>("Color")
-                        .HasColumnType("character varying(8)");
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("CardId", "LabelTitle", "Color");
 
@@ -150,8 +150,8 @@ namespace API.Migrations
                         .HasColumnType("character varying(50)");
 
                     b.Property<string>("Color")
-                        .HasMaxLength(8)
-                        .HasColumnType("character varying(8)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("LabelTitle", "Color");
 
@@ -203,8 +203,8 @@ namespace API.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
 
                     b.Property<string>("Username")
                         .IsRequired()

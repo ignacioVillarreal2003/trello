@@ -17,7 +17,7 @@ namespace API.Migrations
                 columns: table => new
                 {
                     LabelTitle = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    Color = table.Column<string>(type: "character varying(8)", maxLength: 8, nullable: false)
+                    Color = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,13 +28,12 @@ namespace API.Migrations
                 name: "Teams",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    TeamName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
+                    TeamName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Theme = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Teams", x => x.Id);
+                    table.PrimaryKey("PK_Teams", x => x.TeamName);
                 });
 
             migrationBuilder.CreateTable(
@@ -43,7 +42,7 @@ namespace API.Migrations
                 {
                     Email = table.Column<string>(type: "text", nullable: false),
                     Username = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    Password = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false)
+                    Password = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -57,16 +56,17 @@ namespace API.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     BoardTitle = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    TeamId = table.Column<long>(type: "bigint", nullable: false)
+                    Theme = table.Column<string>(type: "text", nullable: false),
+                    TeamName = table.Column<string>(type: "character varying(50)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Boards", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Boards_Teams_TeamId",
-                        column: x => x.TeamId,
+                        name: "FK_Boards_Teams_TeamName",
+                        column: x => x.TeamName,
                         principalTable: "Teams",
-                        principalColumn: "Id",
+                        principalColumn: "TeamName",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -75,16 +75,16 @@ namespace API.Migrations
                 columns: table => new
                 {
                     UserEmail = table.Column<string>(type: "text", nullable: false),
-                    TeamId = table.Column<long>(type: "bigint", nullable: false)
+                    TeamName = table.Column<string>(type: "character varying(50)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserTeams", x => new { x.UserEmail, x.TeamId });
+                    table.PrimaryKey("PK_UserTeams", x => new { x.UserEmail, x.TeamName });
                     table.ForeignKey(
-                        name: "FK_UserTeams_Teams_TeamId",
-                        column: x => x.TeamId,
+                        name: "FK_UserTeams_Teams_TeamName",
+                        column: x => x.TeamName,
                         principalTable: "Teams",
-                        principalColumn: "Id",
+                        principalColumn: "TeamName",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_UserTeams_Users_UserEmail",
@@ -138,15 +138,40 @@ namespace API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CardLabels",
+                columns: table => new
+                {
+                    CardId = table.Column<long>(type: "bigint", nullable: false),
+                    LabelTitle = table.Column<string>(type: "character varying(50)", nullable: false),
+                    Color = table.Column<string>(type: "character varying(50)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CardLabels", x => new { x.CardId, x.LabelTitle, x.Color });
+                    table.ForeignKey(
+                        name: "FK_CardLabels_Cards_CardId",
+                        column: x => x.CardId,
+                        principalTable: "Cards",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CardLabels_Labels_LabelTitle_Color",
+                        columns: x => new { x.LabelTitle, x.Color },
+                        principalTable: "Labels",
+                        principalColumns: new[] { "LabelTitle", "Color" },
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CardUsers",
                 columns: table => new
                 {
                     CardId = table.Column<long>(type: "bigint", nullable: false),
-                    UserMail = table.Column<string>(type: "text", nullable: false)
+                    UserEmail = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CardUsers", x => new { x.CardId, x.UserMail });
+                    table.PrimaryKey("PK_CardUsers", x => new { x.CardId, x.UserEmail });
                     table.ForeignKey(
                         name: "FK_CardUsers_Cards_CardId",
                         column: x => x.CardId,
@@ -154,8 +179,8 @@ namespace API.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CardUsers_Users_UserMail",
-                        column: x => x.UserMail,
+                        name: "FK_CardUsers_Users_UserEmail",
+                        column: x => x.UserEmail,
                         principalTable: "Users",
                         principalColumn: "Email",
                         onDelete: ReferentialAction.Cascade);
@@ -182,35 +207,15 @@ namespace API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "TargetLabels",
-                columns: table => new
-                {
-                    CardId = table.Column<long>(type: "bigint", nullable: false),
-                    LabelTitle = table.Column<string>(type: "character varying(50)", nullable: false),
-                    Color = table.Column<string>(type: "character varying(8)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TargetLabels", x => new { x.CardId, x.LabelTitle, x.Color });
-                    table.ForeignKey(
-                        name: "FK_TargetLabels_Cards_CardId",
-                        column: x => x.CardId,
-                        principalTable: "Cards",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_TargetLabels_Labels_LabelTitle_Color",
-                        columns: x => new { x.LabelTitle, x.Color },
-                        principalTable: "Labels",
-                        principalColumns: new[] { "LabelTitle", "Color" },
-                        onDelete: ReferentialAction.Cascade);
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_Boards_TeamName",
+                table: "Boards",
+                column: "TeamName");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Boards_TeamId",
-                table: "Boards",
-                column: "TeamId");
+                name: "IX_CardLabels_LabelTitle_Color",
+                table: "CardLabels",
+                columns: new[] { "LabelTitle", "Color" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cards_ListId",
@@ -218,9 +223,9 @@ namespace API.Migrations
                 column: "ListId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CardUsers_UserMail",
+                name: "IX_CardUsers_UserEmail",
                 table: "CardUsers",
-                column: "UserMail");
+                column: "UserEmail");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_CardId",
@@ -233,19 +238,17 @@ namespace API.Migrations
                 column: "BoardId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TargetLabels_LabelTitle_Color",
-                table: "TargetLabels",
-                columns: new[] { "LabelTitle", "Color" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserTeams_TeamId",
+                name: "IX_UserTeams_TeamName",
                 table: "UserTeams",
-                column: "TeamId");
+                column: "TeamName");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "CardLabels");
+
             migrationBuilder.DropTable(
                 name: "CardUsers");
 
@@ -253,16 +256,13 @@ namespace API.Migrations
                 name: "Comments");
 
             migrationBuilder.DropTable(
-                name: "TargetLabels");
-
-            migrationBuilder.DropTable(
                 name: "UserTeams");
 
             migrationBuilder.DropTable(
-                name: "Cards");
+                name: "Labels");
 
             migrationBuilder.DropTable(
-                name: "Labels");
+                name: "Cards");
 
             migrationBuilder.DropTable(
                 name: "Users");

@@ -1,5 +1,5 @@
 <div class="card-content">
-  <div class="content" *ngIf="card && formUpdateTitleCard && formUpdateDescriptionCard && formUpdateEndCard">
+  <div class="content" *ngIf="card && formUpdateTitleCard && formUpdateDescriptionCard && formUpdateEndCard && formUpdateCommentDescription">
     <button class="close" (click)="CloseWindow()"><p>x</p></button>
 
     <form [formGroup]="formUpdateTitleCard">
@@ -20,30 +20,51 @@
       </div>
     </form>
 
-    <div class="comments">
-      <button (click)="OpenPostComment()">Add comment</button>
-      <ul>
-        <li *ngFor="let comment of comments"><p>{{ comment.commentDescription }}</p></li>
-      </ul>
-    </div>
-
-    <div class="usuarios">
-      <button (click)="OpenPostCardUsers()">Asign user</button>
-      <ul>
-        <li *ngFor="let user of users"><p>{{ user.email }}</p></li>
-      </ul>
-    </div>
-
-    <div class="label">
-      <button (click)="OpenPostLabel()">Add label</button>
-      <ul>
-        <li *ngFor="let label of labels"><p>{{ label.labelTitle }}</p></li>
-      </ul>
+    <div id="more-data-card">
+      <div id="options-more-data-card">
+        <button data-selected="true" (click)="ChangeOptionMoreDataCard(0, $event)">Comments</button>
+        <button data-selected="false" (click)="ChangeOptionMoreDataCard(1, $event)">Users</button>
+        <button data-selected="false" (click)="ChangeOptionMoreDataCard(2, $event)">Labels</button>
+      </div>
+      <div class="content-more-data-card" id="comments-card">
+        <button class="post-data-card" (click)="OpenPostComment()">Add comment</button>
+        <ul>
+          <li *ngFor="let comment of comments">
+            <div id="content-comment">
+              <p class="comment-description">{{ comment.commentDescription }}</p>
+              <p>{{ comment.commentDate.slice(0,10) }}</p>
+            </div>
+            <div class="comment-operations">
+              <button class="update-data-card" (click)="DeleteComment(comment)"></button>
+              <button class="delete-data-card" (click)="DeleteComment(comment)"></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="content-more-data-card" id="users-card">
+        <button class="post-data-card" (click)="OpenPostCardUsers()">Asign user</button>
+        <ul>
+          <li *ngFor="let user of users">
+            <div id="content-user">
+              <p>{{ user.email }}</p>
+            </div>
+            <button class="delete-data-card" (click)="DeleteUser(user)"></button>
+          </li>
+        </ul>
+      </div>
+      <div class="content-more-data-card" id="label-card">
+        <button class="post-data-card" (click)="OpenPostLabel()">Add label</button>
+        <ul>
+          <li *ngFor="let label of labels">
+            <div id="content-label">
+              <p>{{ label.labelTitle }}</p>
+            </div>
+            <button class="delete-data-card" (click)="DeleteLabel(label)"></button>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <button class="delete-card" (click)="DeleteCard()">Delete</button>
   </div>
 </div>
-<app-form-post-comment class="form" id="form-post-comment"></app-form-post-comment>
-<app-form-post-card-user class="form" id="form-post-card-user"></app-form-post-card-user>
-<app-form-post-label class="form" id="form-post-label"></app-form-post-label>

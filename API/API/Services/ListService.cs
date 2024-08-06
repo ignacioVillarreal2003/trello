@@ -40,7 +40,11 @@ public class ListService
             return false;
         }
 
-        l.ListTitle = list.ListTitle;
+        if (list.ListTitle.Length > 0)
+        {
+            l.ListTitle = list.ListTitle;
+        }
+        
         return await _listRepository.UpdateListAsync(l);
     }
 }

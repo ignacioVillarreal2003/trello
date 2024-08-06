@@ -57,7 +57,7 @@ export class UserHttpService {
     return this.http.get<any>(this.baseUrl, this.httpOptions).pipe(
       catchError(this.handleError),
       map(response => {
-        return response.users.result;
+        return response.users;
       })
     );
   }

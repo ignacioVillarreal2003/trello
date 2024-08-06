@@ -10,7 +10,7 @@ public class Label
     public string LabelTitle { get; set; }
 
     [Required]
-    [StringLength(8)]
+    [StringLength(50)]
     public string Color { get; set; }
 
     public ICollection<CardLabel> CardLabels { get; set; }

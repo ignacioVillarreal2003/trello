@@ -5,13 +5,13 @@ services:
     image: postgres:latest
     container_name: postgres_container
     ports:
-      - "5432:5432"  # Exponer el puerto 5432 para PostgreSQL
+      - "5432:5432"
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: API  # Nombre de la base de datos que se creará al iniciar el contenedor
+      POSTGRES_DB: API
     volumes:
-      - postgres_data:/var/lib/postgresql/data  # Persistir datos entre reinicios del contenedor
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
   postgres_data:

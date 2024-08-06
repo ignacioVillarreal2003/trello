@@ -1,0 +1,16 @@
+#forms-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  z-index: 2;
+  height: 100vh;
+  background: rgb(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+}
+
+#forms-content .form {
+  display: none;
+}
